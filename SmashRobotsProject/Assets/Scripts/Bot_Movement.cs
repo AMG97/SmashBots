@@ -11,7 +11,11 @@ public class Bot_Movement : MonoBehaviour
     float speed;
 
     [SerializeField]
-    float max_angle;
+    float max_angle, rotation_wheel;
+
+    [SerializeField]
+    Transform FrontLeftWheel, FrontRightWheel, BackLeftWheel, BackRightWheel;
+
 
     float previous_x = 0;
     float previous_z = 0;
@@ -44,7 +48,7 @@ public class Bot_Movement : MonoBehaviour
             if (Mathf.Abs(x-previous_x)>max_angle)
             {
                 if (x > previous_x)
-                    x = previous_x + max_angle;
+                    x = previous_x + max_angle; //aqui poner algo de girar las ruedassssssssssssss
                 else
                     x = previous_x - max_angle;
             }
@@ -60,8 +64,13 @@ public class Bot_Movement : MonoBehaviour
 
             Vector3 vel = rb.velocity;
             vel = -rb.transform.forward * speed;
-            vel -= new Vector3(0, rb.velocity.y, 0);
+            vel.y = rb.velocity.y;
             rb.velocity = vel;
+
+            FrontLeftWheel.Rotate(new Vector3(- rotation_wheel * Time.deltaTime, 0, 0));
+            FrontRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
+            BackRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
+            BackLeftWheel.Rotate(new Vector3(- rotation_wheel * Time.deltaTime, 0, 0));
         }
         else
         {

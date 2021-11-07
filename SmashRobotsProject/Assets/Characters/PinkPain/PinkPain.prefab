@@ -134,10 +134,10 @@ MonoBehaviour:
   speed: 2
   max_angle: 0.03
   rotation_wheel: 160
-  FrontLeftWheel: {fileID: 8291728487305919617}
-  FrontRightWheel: {fileID: 8291728486467845109}
-  BackLeftWheel: {fileID: 8291728486679165094}
-  BackRightWheel: {fileID: 8291728487653991338}
+  FrontLeftWheel: {fileID: 8291728486467845109}
+  FrontRightWheel: {fileID: 8291728487305919617}
+  BackLeftWheel: {fileID: 8291728487653991338}
+  BackRightWheel: {fileID: 8291728486679165094}
 --- !u!1001 &8401634832138306625
 PrefabInstance:
   m_ObjectHideFlags: 0

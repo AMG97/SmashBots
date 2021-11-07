@@ -36,14 +36,9 @@ public class Bot_Movement : MonoBehaviour
         {
             float hipo = Mathf.Sqrt(x * x + z * z);
             float dif = 1.0f / hipo;
-            Debug.Log("Antes X " + x);
-            Debug.Log("Z" + z);
 
             x = x * dif;
             z = z * dif;
-
-            Debug.Log("Despues X " + x);
-            Debug.Log("Z" + z);
 
             if (Mathf.Abs(x-previous_x)>max_angle)
             {

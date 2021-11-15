@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5862047623577241857, guid: 68a07a1424e5bee478880e951168dca2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5862047623577241857, guid: 68a07a1424e5bee478880e951168dca2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,6 +412,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
+--- !u!1 &88647096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 99751bf3c1030ff45b7bbffb418d7ce9, type: 3}
+  m_PrefabInstance: {fileID: 1762509078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &88647097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88647096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3c805e79b99944ea0e164f0e8706c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incrementoRotacion: 20
+  tiempo: 3
 --- !u!95 &120144259 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 99751bf3c1030ff45b7bbffb418d7ce9, type: 3}
@@ -5592,7 +5611,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ce88ad21c7740b44cb0fa6f6f3b6245c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce88ad21c7740b44cb0fa6f6f3b6245c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7885,7 +7904,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 949637690}
-  - component: {fileID: 949637691}
   m_Layer: 0
   m_Name: douglas1
   m_TagString: Untagged
@@ -7908,18 +7926,6 @@ Transform:
   m_Father: {fileID: 755796470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &949637691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949637689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3c805e79b99944ea0e164f0e8706c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

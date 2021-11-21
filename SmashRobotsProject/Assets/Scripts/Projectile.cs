@@ -27,6 +27,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Bot_Movement bot = other.GetComponent<Bot_Movement>();
+        if (bot != null)
+            bot.Daño(damage);
         //Hacer daño a lo que se haya chocao
         Destroy(gameObject);
     }

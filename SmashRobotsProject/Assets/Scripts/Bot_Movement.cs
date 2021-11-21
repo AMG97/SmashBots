@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bot_Movement : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class Bot_Movement : MonoBehaviour
 
     [SerializeField]
     Transform FrontLeftWheel, FrontRightWheel, BackLeftWheel, BackRightWheel;
+
+
+    [SerializeField]
+    Vida vida;
 
 
     float previous_x = 0;
@@ -58,9 +63,11 @@ public class Bot_Movement : MonoBehaviour
             rb.transform.localEulerAngles = new Vector3(0, Mathf.Atan2(z, x) * 180 / Mathf.PI, 0);
 
             Vector3 vel = rb.velocity;
-            vel = -rb.transform.forward * speed;
+            /*vel = -rb.transform.forward * speed;
             vel.y = rb.velocity.y;
-            rb.velocity = vel;
+            rb.velocity = vel;*/
+
+            rb.AddForce(-rb.transform.forward * speed);
 
             FrontLeftWheel.Rotate(new Vector3(- rotation_wheel * Time.deltaTime, 0, 0));
             FrontRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
@@ -74,5 +81,10 @@ public class Bot_Movement : MonoBehaviour
 
         previous_x = x;
         previous_z = z;
+    }
+
+    public void Daño ( float daño)
+    {
+        vida.Daño(daño);
     }
 }

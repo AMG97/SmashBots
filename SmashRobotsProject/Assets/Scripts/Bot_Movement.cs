@@ -17,9 +17,15 @@ public class Bot_Movement : MonoBehaviour
     [SerializeField]
     Transform FrontLeftWheel, FrontRightWheel, BackLeftWheel, BackRightWheel;
 
+    [SerializeField]
+    Shoot arma1, arma2;
+
 
     [SerializeField]
     Vida vida;
+
+    [SerializeField]
+    Energia energia;
 
 
     float previous_x = 0;
@@ -45,6 +51,8 @@ public class Bot_Movement : MonoBehaviour
             x = x * dif;
             z = z * dif;
 
+            /*
+
             if (Mathf.Abs(x-previous_x)>max_angle)
             {
                 if (x > previous_x)
@@ -60,12 +68,16 @@ public class Bot_Movement : MonoBehaviour
                 else
                     z = previous_z - max_angle;
             }
-            rb.transform.localEulerAngles = new Vector3(0, Mathf.Atan2(z, x) * 180 / Mathf.PI, 0);
+            rb.transform.localEulerAngles = new Vector3(0, Mathf.Atan2(z, x) * 180 / Mathf.PI, 0);*/
+
+            float rot_y = Mathf.Atan2(z, x) * 180 / Mathf.PI;
+            var qr = Quaternion.Euler(0, rot_y, 0);
+
+
+            rb.transform.rotation = Quaternion.Lerp(transform.rotation, qr, max_angle * Time.deltaTime);
 
             Vector3 vel = rb.velocity;
-            /*vel = -rb.transform.forward * speed;
-            vel.y = rb.velocity.y;
-            rb.velocity = vel;*/
+
 
             rb.AddForce(-rb.transform.forward * speed);
 
@@ -86,5 +98,22 @@ public class Bot_Movement : MonoBehaviour
     public void Daño ( float daño)
     {
         vida.Daño(daño);
+    }
+
+    public void DispararArma1()
+    {
+        if(energia.Disparar(arma1.Get_Energy()) )
+        {
+            arma1.Shoot_Proyectile();
+        }
+        
+    }
+
+    public void DispararArma2()
+    {
+        if (energia.Disparar(arma2.Get_Energy()))
+        {
+            arma2.Shoot_Proyectile();
+        }
     }
 }

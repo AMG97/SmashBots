@@ -8,6 +8,8 @@ public class Mine : MonoBehaviour
     ParticleSystem explosion;
     [SerializeField]
     float explosion_force;
+
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     float max_time_alive, damage;
     [SerializeField]
-    Vector3 speed;
+    float speed;
 
     float time_alive;
     // Start is called before the first frame update
@@ -22,15 +22,18 @@ public class Projectile : MonoBehaviour
         time_alive += Time.deltaTime;
         if (time_alive >= max_time_alive)
             Destroy(gameObject);
-        gameObject.transform.localPosition += speed*Time.deltaTime;
+        gameObject.transform.position -= gameObject.transform.forward*Time.deltaTime*speed;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Bot_Movement bot = other.GetComponent<Bot_Movement>();
-        if (bot != null)
-            bot.Daño(damage);
-        //Hacer daño a lo que se haya chocao
-        Destroy(gameObject);
+        if (time_alive > Time.deltaTime)
+        {
+            Bot_Movement bot = other.GetComponent<Bot_Movement>();
+            if (bot != null)
+                bot.Daño(damage);
+            //Hacer daño a lo que se haya chocao
+            Destroy(gameObject);
+        }
     }
 }

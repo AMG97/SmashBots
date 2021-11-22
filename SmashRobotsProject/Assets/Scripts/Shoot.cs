@@ -7,34 +7,40 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     GameObject projectile;
     [SerializeField]
-    Vector3 local_position;
+    float energia;
     [SerializeField]
-    float energy; // esto de momento no lo utilizo
+    Transform punto_disparo;
     // Start is called before the first frame update
 
-    //ESTO ES SOLO DE PRUEBA
-    float max_time = 3;
-    float time = 0;
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if(time >= max_time)
-        {
-            time = 0;
-            Shoot_Proyectile();
-        }
+     
     }
 
     public void Shoot_Proyectile()
     {
-        //aqui hacer algo de la energía
-        GameObject shot = Instantiate(projectile, gameObject.transform);
-        shot.transform.localPosition += local_position;
+        GameObject g;
+        if(projectile.name == "Electricidad" || projectile.name == "Fuego")
+            g=Instantiate(projectile, gameObject.transform);
+        else 
+            g=Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);
+        if (projectile.name == "Mina")
+        {
+            g.transform.position = new Vector3(g.transform.position.x, 0, g.transform.position.z);
+            Vector3 new_rot = g.transform.rotation.eulerAngles;
+            new_rot.x = 0;
+            g.transform.eulerAngles=(new_rot);
+        }
+    }
+
+    public float Get_Energy()
+    {
+        return energia;
     }
 }

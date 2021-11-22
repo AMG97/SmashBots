@@ -29,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.857, y: 1.1853, z: 0.23006}
   m_LocalScale: {x: 1.4788, y: 1.4788, z: 1.4788}
-  m_Children: []
+  m_Children:
+  - {fileID: 672741337205879587}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,6 +97,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99a3bd339871cb43963c5b33886d828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  local_position: {x: 0, y: -0.0075, z: -0.116}
-  energy: 0
+  projectile: {fileID: 3486079399316373035, guid: a4419f9555b34b542b964a6e3bc2c178, type: 3}
+  energia: 15
+  punto_disparo: {fileID: 672741337205879587}
+--- !u!1 &7962212616028589865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672741337205879587}
+  m_Layer: 0
+  m_Name: PuntoDisparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &672741337205879587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962212616028589865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00024731815, y: -0.0063, z: -0.1099}
+  m_LocalScale: {x: 0.67622393, y: 0.67622393, z: 0.67622393}
+  m_Children: []
+  m_Father: {fileID: 2801969551818410344}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

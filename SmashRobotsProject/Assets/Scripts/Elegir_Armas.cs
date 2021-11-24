@@ -4,48 +4,48 @@ using UnityEngine;
 
 public class Elegir_Armas : MonoBehaviour
 {
-    bool [] armas = new bool[2];
-    string[] armas_nombre = new string[2];
+    GameObject[] armas = new GameObject[2];
 
     [SerializeField]
     Transform arma_izquierda_pos, arma_derecha_pos, arma_detras_pos;
 
     [SerializeField]
     float scale;
-  
+
     public void Arma(GameObject a)
     {
-        GameObject new_arma;
+        if (armas[0] == null)
+        {
 
-        if(!armas[0])
-        {
-            armas[0] = true;
-            armas_nombre[0] = a.name;
-            if(armas_nombre[0] == "LanzaMinas")
+            if (a.name == "LanzaMinas")
             {
-                new_arma = Instantiate(a, arma_detras_pos);
+                armas[0] = Instantiate(a, arma_detras_pos);
             }
             else
             {
-                new_arma = Instantiate(a, arma_izquierda_pos);
+                armas[0] = Instantiate(a, arma_izquierda_pos);
             }
-            new_arma.layer = 5;
-            new_arma.transform.localScale=Vector3.Scale(new_arma.transform.localScale, new Vector3(scale,scale,scale));
+            armas[0].layer = 5;
+            armas[0].transform.localScale = Vector3.Scale(armas[0].transform.localScale, new Vector3(scale, scale, scale));
         }
-        else if(!armas[1])
+        else if (armas[1] == null)
         {
-            armas[1] = true;
-            armas_nombre[1] = a.name;
-            if(armas_nombre[1]!= "LanzaMinas")
+
+            if (a.name == "LanzaMinas")
             {
-                new_arma = Instantiate(a, arma_derecha_pos);
+                armas[1] = Instantiate(a, arma_detras_pos);
             }
             else
             {
-                new_arma = Instantiate(a, arma_detras_pos);
+                armas[1] = Instantiate(a, arma_derecha_pos);
             }
-            new_arma.layer = 5;
-            new_arma.transform.localScale=Vector3.Scale(new_arma.transform.localScale, new Vector3(scale, scale, scale));
+            armas[1].layer = 5;
+            armas[1].transform.localScale = Vector3.Scale(armas[1].transform.localScale, new Vector3(scale, scale, scale));
         }
+    }
+
+    public GameObject GetArma(int i)
+    {
+        return armas[i];
     }
 }

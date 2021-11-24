@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class Camera_Follow : MonoBehaviour
 {
-    [SerializeField]
-    GameObject robot;
+    public GameObject robot;
     [SerializeField]
     Vector3 posicionRelativa;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(posicionRelativa.Equals(new Vector3(0,0,0)))
-            posicionRelativa = transform.position - robot.transform.position;
-    }
+
+
+    bool started = false;
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = robot.transform.position + posicionRelativa;
+        if(started)
+            transform.position = robot.transform.position + posicionRelativa;
+    }
+
+    public void StartFollow ()
+    {
+        started = true;
+        if (posicionRelativa.Equals(new Vector3(0, 0, 0)))
+            posicionRelativa = transform.position - robot.transform.position;
     }
 }

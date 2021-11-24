@@ -40,9 +40,7 @@ public class Energia : MonoBehaviour
     {
         if(consumo_energia <= energia)
         {
-            Debug.Log(energia);
             energia -= consumo_energia;
-            Debug.Log(energia);
             return true;
         }
 

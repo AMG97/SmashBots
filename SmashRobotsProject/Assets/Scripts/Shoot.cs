@@ -11,18 +11,6 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     Transform punto_disparo;
     // Start is called before the first frame update
-
-    void Start()
-    {
-   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-     
-    }
-
     public void Shoot_Proyectile()
     {
         GameObject g;
@@ -32,7 +20,7 @@ public class Shoot : MonoBehaviour
             g=Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);
         if (projectile.name == "Mina")
         {
-            g.transform.position = new Vector3(g.transform.position.x, 0, g.transform.position.z);
+            g.transform.position = new Vector3(g.transform.position.x, -0.14f, g.transform.position.z);
             Vector3 new_rot = g.transform.rotation.eulerAngles;
             new_rot.x = 0;
             g.transform.eulerAngles=(new_rot);

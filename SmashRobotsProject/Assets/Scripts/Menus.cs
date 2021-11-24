@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Menus : MonoBehaviour
 {
+    public Elegir_Armas armas;
+
     public void LoadGame()
     {
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
+        Game_Controller.arma_1 = armas.GetArma(0).name;
+        Game_Controller.arma_2 = armas.GetArma(1).name;
+        SceneManager.LoadScene("Game2", LoadSceneMode.Single);
     }
 }

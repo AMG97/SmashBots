@@ -116,4 +116,20 @@ public class Bot_Movement : MonoBehaviour
             arma2.Shoot_Proyectile();
         }
     }
+
+    public void SetArma1(GameObject a)
+    {
+        arma1 = a.GetComponent<Shoot>();
+    }
+
+    public void SetArma2(GameObject a)
+    {
+        arma2 = a.GetComponent<Shoot>();
+    }
+
+    public void  SetVidaEnergia(Vida v, Energia e)
+    {
+        vida = v;
+        energia = e;
+    }
 }

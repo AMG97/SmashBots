@@ -35,17 +35,22 @@ public class Elegir_Armas : MonoBehaviour
     public void Arma(GameObject a,Button b)
     {
         Image i = b.GetComponent<Image>();
-        if(armas[0]!=null && armas[0].name.Contains(a.name))
+
+        ColorBlock cb = b.colors;
+     
+        if (armas[0]!=null && armas[0].name.Contains(a.name))
         {
             Destroy(armas[0]);
             armas[0] = null;
-            i.color = desactivado;
+            cb.normalColor = desactivado;
+            cb.selectedColor = desactivado;
         }
         else if(armas[1] != null && armas[1].name.Contains( a.name))
         {
             Destroy(armas[1]);
             armas[1] = null;
-            i.color = desactivado;
+            cb.normalColor = desactivado;
+            cb.selectedColor = desactivado;
         }
         else if (armas[0] == null)
         {
@@ -60,7 +65,8 @@ public class Elegir_Armas : MonoBehaviour
             }
             armas[0].layer = 5;
             armas[0].transform.localScale = Vector3.Scale(armas[0].transform.localScale, new Vector3(scale, scale, scale));
-            i.color = activado;
+            cb.normalColor = activado;
+            cb.selectedColor = activado;
         }
         else if (armas[1] == null)
         {
@@ -75,8 +81,10 @@ public class Elegir_Armas : MonoBehaviour
             }
             armas[1].layer = 5;
             armas[1].transform.localScale = Vector3.Scale(armas[1].transform.localScale, new Vector3(scale, scale, scale));
-            i.color = activado;
+            cb.normalColor = activado;
+            cb.selectedColor = activado;
         }
+        b.colors = cb;
     }
 
     public GameObject GetArma(int i)

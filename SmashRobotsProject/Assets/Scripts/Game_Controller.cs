@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Game_Controller : MonoBehaviour
 {
@@ -31,6 +32,15 @@ public class Game_Controller : MonoBehaviour
 
     [SerializeField]
     Sprite i_mina, i_pistola, i_taser, i_laser, i_lanzallamas;
+
+    [SerializeField]
+    TMPro.TextMeshProUGUI contador_text;
+    int contador_number=3;
+
+    [SerializeField]
+    TMPro.TextMeshProUGUI timer_text;
+    [SerializeField]
+    int min=3,sec=0;
 
     private void Start()
     {
@@ -112,6 +122,7 @@ public class Game_Controller : MonoBehaviour
         cam.robot = player;
         cam.StartFollow();
         
+        StartCoroutine(CountDown());        
     }
 
     public void Shoot1()
@@ -122,5 +133,50 @@ public class Game_Controller : MonoBehaviour
     public void Shoot2()
     {
         m.DispararArma2();
+    }
+
+    IEnumerator CountDown()
+    {
+        while(contador_number > 0)
+        {
+            contador_text.text = contador_number.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            contador_number--;
+        }
+
+        contador_text.text = "YA!";
+
+        yield return new WaitForSeconds(1f);
+
+        contador_text.gameObject.SetActive(false);
+
+        m.StartPlayer();
+
+        StartCoroutine(Timer());
+        Debug.Log("TIMER");
+    }
+
+    IEnumerator Timer()
+    {
+
+        while (min >= 0 || sec >= 0)
+        {
+            if(sec >= 10)
+                timer_text.text =  min.ToString() + ":" + sec.ToString();
+            else
+                timer_text.text =  min.ToString() + ":0" + sec.ToString();
+            yield return new WaitForSeconds(1f);
+            sec--;
+            if(sec<0)
+            {
+                sec = 59;
+                min--;
+            }
+        }
+        Debug.Log("FIN");
+        ////AQUI PONER MENU FINAL
+        
     }
 }

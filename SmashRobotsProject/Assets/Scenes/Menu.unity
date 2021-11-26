@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.16788329, g: 0.21073541, b: 0.2899403, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: 08b09679bec38554f9c532db67b9ec62, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -186,7 +186,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0.078431375, b: 0.44313726, a: 0.73333335}
     m_HighlightedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
     m_PressedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
+    m_SelectedColor: {r: 0, g: 0.078431375, b: 0.4431373, a: 0.73333335}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0.078431375, b: 0.44313726, a: 0.73333335}
     m_HighlightedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
     m_PressedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 0, g: 0.078431375, b: 0.4431373, a: 0.73333335}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2297,7 +2297,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0.078431375, b: 0.44313726, a: 0.73333335}
     m_HighlightedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
     m_PressedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
+    m_SelectedColor: {r: 0, g: 0.078431375, b: 0.4431373, a: 0.73333335}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2590,7 +2590,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0.078431375, b: 0.44313726, a: 0.73333335}
     m_HighlightedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
     m_PressedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
+    m_SelectedColor: {r: 0, g: 0.078431375, b: 0.4431373, a: 0.73333335}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2992,6 +2992,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244992394}
   m_CullTransparentMesh: 1
+--- !u!1 &1356264147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356264148}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1356264148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356264147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.36862922, y: -0.4439554, z: -5.0426188}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464866815
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,7 +3085,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0.078431375, b: 0.44313726, a: 0.73333335}
     m_HighlightedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
     m_PressedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5686275, b: 0.24313726, a: 1}
+    m_SelectedColor: {r: 0, g: 0.078431375, b: 0.4431373, a: 0.73333335}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

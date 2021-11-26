@@ -9,8 +9,16 @@ public class Menus : MonoBehaviour
 
     public void LoadGame()
     {
-        Game_Controller.arma_1 = armas.GetArma(0).name;
-        Game_Controller.arma_2 = armas.GetArma(1).name;
+        if (armas.GetArma(0) != null)
+            Game_Controller.arma_1 = armas.GetArma(0).name;
+        else
+            Game_Controller.arma_1 = "BBGun(Clone)";
+
+        if (armas.GetArma(1) != null)
+            Game_Controller.arma_2 = armas.GetArma(1).name;
+        else
+            Game_Controller.arma_2 = "Lanzallamas(Clone)";
+
         SceneManager.LoadScene("Game2", LoadSceneMode.Single);
     }
 }

@@ -9,6 +9,9 @@ public class Mine : MonoBehaviour
     [SerializeField]
     float explosion_force;
 
+    [SerializeField]
+    float damage;
+
     
     // Start is called before the first frame update
     void Start()
@@ -22,10 +25,14 @@ public class Mine : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator OnTriggerEnter(Collider other)
     {
+        Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+        yield return new WaitForSeconds(0.15f);
         other.GetComponent<Rigidbody>().AddForce(new Vector3(0, explosion_force, 0));
-        Instantiate(explosion, gameObject.transform.position,gameObject.transform.rotation);
+        Bot_Movement bot = other.GetComponent<Bot_Movement>();
+        if (bot != null)
+            bot.Daño(damage);
         Destroy(gameObject);
     }
 }

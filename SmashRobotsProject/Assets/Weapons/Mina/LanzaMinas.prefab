@@ -62,9 +62,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2813467912831258332, guid: d9a1e293a41cf3b4090e8a08319f9614, type: 3}
-  - {fileID: -6629797300637803691, guid: d9a1e293a41cf3b4090e8a08319f9614, type: 3}
-  - {fileID: -8274133419916619345, guid: d9a1e293a41cf3b4090e8a08319f9614, type: 3}
+  - {fileID: 2100000, guid: ecc312bb83dddde448402dc3e7c0eea9, type: 2}
+  - {fileID: 2100000, guid: 5b65e26cb300c8b449a725cc686eddf9, type: 2}
+  - {fileID: 2100000, guid: 77880e190a2ac44489e2d4920ccf7667, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,6 +114,9 @@ MonoBehaviour:
   projectile: {fileID: 7245105131432576632, guid: 371e5ad3e14cdbd47b60387cb572a7f8, type: 3}
   energia: 50
   punto_disparo: {fileID: 1952535686516575871}
+  nombre: Lanza Minas
+  descripcion: "Suelta minas explosivas que explotar\xE1n cuando alguien pase por
+    encima de ellas\n\n\n- Remoto\n\n"
 --- !u!1 &3770213960436616740
 GameObject:
   m_ObjectHideFlags: 0

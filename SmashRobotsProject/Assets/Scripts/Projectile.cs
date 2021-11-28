@@ -36,4 +36,9 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public float Daño()
+    {
+        return damage;
+    }
 }

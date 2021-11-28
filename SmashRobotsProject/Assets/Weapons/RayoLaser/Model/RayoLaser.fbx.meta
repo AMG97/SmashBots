@@ -3,7 +3,32 @@ guid: 18d30d49a502b1442afa79ae6593a4dd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Azul_Luzes
+    second: {fileID: 2100000, guid: 51536740ff554ad42acf42767225bc33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cinza_Grip
+    second: {fileID: 2100000, guid: d47b0cdd8bb430f46830ffd45cca118c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gelo3
+    second: {fileID: 2100000, guid: 33734c830c537b642ab56f717c4cd1a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Blinn
+    second: {fileID: 2100000, guid: f71f71b1cb844b7429313d5c367aac3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roxo_Padrao
+    second: {fileID: 2100000, guid: 1ff80504382664240909f251db39e9ce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

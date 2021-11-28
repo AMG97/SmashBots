@@ -61,8 +61,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: ce88ad21c7740b44cb0fa6f6f3b6245c, type: 3}
-  - {fileID: -6922793697723135513, guid: ce88ad21c7740b44cb0fa6f6f3b6245c, type: 3}
+  - {fileID: 2100000, guid: 8e222c40088246443ba052f1b7601e86, type: 2}
+  - {fileID: 2100000, guid: 6160bf2d019de734ab26df10d7f4ae25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,16 @@ MonoBehaviour:
   projectile: {fileID: 4796953166545719017, guid: 9f0dc665b2431b44a82bdc7cb3f0e883, type: 3}
   energia: 20
   punto_disparo: {fileID: 3935436505830565450}
+  nombre: Lanzallamas
+  descripcion: 'Si te encanta dar la brasa puedes centrarte en quemar a tu enemigo
+    en el Fuego
+
+
+
+    - Distancia corta
+
+
+'
 --- !u!1 &4514809117962842720
 GameObject:
   m_ObjectHideFlags: 0

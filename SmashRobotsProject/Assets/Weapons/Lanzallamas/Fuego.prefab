@@ -9624,8 +9624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_time_alive: 2
-  damage: 0
-  speed: {x: 0, y: 0, z: 0}
+  damage: 30
+  speed: 0
 --- !u!136 &8474137872150686856
 CapsuleCollider:
   m_ObjectHideFlags: 0

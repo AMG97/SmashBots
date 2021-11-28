@@ -22,6 +22,9 @@ public class Elegir_Armas : MonoBehaviour
     [SerializeField]
     GameObject o_mina, o_taser, o_laser, o_pistola, o_lanzallamas;
 
+    [SerializeField]
+    Text nombre_arma, descripcion_arma;
+
     private void Start()
     {
         b_mina.onClick.AddListener(delegate { Arma(o_mina,b_mina); });
@@ -67,6 +70,12 @@ public class Elegir_Armas : MonoBehaviour
             armas[0].transform.localScale = Vector3.Scale(armas[0].transform.localScale, new Vector3(scale, scale, scale));
             cb.normalColor = activado;
             cb.selectedColor = activado;
+
+            Shoot s = armas[0].GetComponent<Shoot>();
+
+            nombre_arma.text = s.Get_Nombre();
+            descripcion_arma.text = s.Get_Descripcion();
+            descripcion_arma.text += "- Potencia: "+s.Get_Daño()+"pt \n \n- energia: "+s.Get_Energy()+"pt";
         }
         else if (armas[1] == null)
         {
@@ -83,6 +92,12 @@ public class Elegir_Armas : MonoBehaviour
             armas[1].transform.localScale = Vector3.Scale(armas[1].transform.localScale, new Vector3(scale, scale, scale));
             cb.normalColor = activado;
             cb.selectedColor = activado;
+
+            Shoot s = armas[1].GetComponent<Shoot>();
+
+            nombre_arma.text = s.Get_Nombre();
+            descripcion_arma.text = s.Get_Descripcion();
+            descripcion_arma.text += "- Potencia: " + s.Get_Daño() + "pt \n \n- energia: " + s.Get_Energy() + "pt";
         }
         b.colors = cb;
     }
@@ -91,4 +106,6 @@ public class Elegir_Armas : MonoBehaviour
     {
         return armas[i];
     }
+
+    
 }

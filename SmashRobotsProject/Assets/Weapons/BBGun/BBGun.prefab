@@ -130,3 +130,13 @@ MonoBehaviour:
   projectile: {fileID: 3486079399316373035, guid: a4419f9555b34b542b964a6e3bc2c178, type: 3}
   energia: 20
   punto_disparo: {fileID: 2093005630588648491}
+  nombre: Pistola
+  descripcion: 'Lanza balas a gran velocidad para destrozar a tus oponentes
+
+
+
+    -
+    Distancia larga
+
+
+'

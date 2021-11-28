@@ -35,4 +35,9 @@ public class Mine : MonoBehaviour
             bot.Daño(damage);
         Destroy(gameObject);
     }
+
+    public float Daño()
+    {
+        return damage;
+    }
 }

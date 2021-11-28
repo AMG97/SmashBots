@@ -10,6 +10,9 @@ public class Shoot : MonoBehaviour
     float energia;
     [SerializeField]
     Transform punto_disparo;
+
+    [TextArea][SerializeField]
+    string nombre, descripcion;
     // Start is called before the first frame update
     public void Shoot_Proyectile()
     {
@@ -30,5 +33,22 @@ public class Shoot : MonoBehaviour
     public float Get_Energy()
     {
         return energia;
+    }
+
+    public float Get_Daño()
+    {
+        if(projectile.GetComponent<Projectile>() != null)
+            return projectile.GetComponent<Projectile>().Daño();
+        else
+            return projectile.GetComponent<Mine>().Daño();
+    }
+
+    public string Get_Descripcion()
+    {
+        return descripcion;
+    }
+    public string Get_Nombre()
+    {
+        return nombre;
     }
 }

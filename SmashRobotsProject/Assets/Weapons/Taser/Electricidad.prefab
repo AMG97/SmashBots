@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7724304012022626525}
   - component: {fileID: 7724304012022626522}
   - component: {fileID: 4309178252848282843}
+  - component: {fileID: -214057667389039365}
   m_Layer: 0
   m_Name: Electricidad
   m_TagString: Untagged
@@ -4829,3 +4830,18 @@ CapsuleCollider:
   m_Height: 2.92
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 1.86}
+--- !u!114 &-214057667389039365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724304012022626520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec0df095fcc81a479fdf920e5069459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_time_alive: 3
+  damage: 15
+  speed: 0

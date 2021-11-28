@@ -91,9 +91,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 2aeb0190c8c507c469b1530466b023d3, type: 3}
-  - {fileID: -6478536213147159724, guid: 2aeb0190c8c507c469b1530466b023d3, type: 3}
-  - {fileID: -3846018093981099296, guid: 2aeb0190c8c507c469b1530466b023d3, type: 3}
+  - {fileID: 2100000, guid: 8f2057be7cd263841b3b43e0ce86a6c0, type: 2}
+  - {fileID: 2100000, guid: eb2b2e999b686344eb52fa7c1da2c504, type: 2}
+  - {fileID: 2100000, guid: 539b1858c1e407a4284611c39c6f1f03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,3 +130,13 @@ MonoBehaviour:
   projectile: {fileID: 7724304012022626520, guid: e4f164a8f2b631f449e4d28017743588, type: 3}
   energia: 40
   punto_disparo: {fileID: 2220347004183947197}
+  nombre: Taser
+  descripcion: 'Conviertete en Thor y realiza una gran descarga electrica sobre tu
+    oponente
+
+
+
+    - Corta distancia
+
+
+'

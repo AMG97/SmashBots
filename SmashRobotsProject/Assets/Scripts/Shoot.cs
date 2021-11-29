@@ -14,6 +14,14 @@ public class Shoot : MonoBehaviour
     [TextArea][SerializeField]
     string nombre, descripcion;
     // Start is called before the first frame update
+
+    AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     public void Shoot_Proyectile()
     {
         GameObject g;
@@ -27,6 +35,10 @@ public class Shoot : MonoBehaviour
             Vector3 new_rot = g.transform.rotation.eulerAngles;
             new_rot.x = 0;
             g.transform.eulerAngles=(new_rot);
+        }
+        else
+        {
+            audio.Play();
         }
     }
 

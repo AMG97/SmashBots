@@ -25,6 +25,9 @@ public class Elegir_Armas : MonoBehaviour
     [SerializeField]
     Text nombre_arma, descripcion_arma;
 
+    [SerializeField]
+    Menu_Sounds ms;
+
     private void Start()
     {
         b_mina.onClick.AddListener(delegate { Arma(o_mina,b_mina); });
@@ -47,6 +50,7 @@ public class Elegir_Armas : MonoBehaviour
             armas[0] = null;
             cb.normalColor = desactivado;
             cb.selectedColor = desactivado;
+            ms.PlaySound_Back();
         }
         else if(armas[1] != null && armas[1].name.Contains( a.name))
         {
@@ -54,6 +58,7 @@ public class Elegir_Armas : MonoBehaviour
             armas[1] = null;
             cb.normalColor = desactivado;
             cb.selectedColor = desactivado;
+            ms.PlaySound_Back();
         }
         else if (armas[0] == null)
         {
@@ -76,6 +81,7 @@ public class Elegir_Armas : MonoBehaviour
             nombre_arma.text = s.Get_Nombre();
             descripcion_arma.text = s.Get_Descripcion();
             descripcion_arma.text += "- Potencia: "+s.Get_Daño()+"pt \n \n- energia: "+s.Get_Energy()+"pt";
+            ms.PlaySound_Advance();
         }
         else if (armas[1] == null)
         {
@@ -98,6 +104,7 @@ public class Elegir_Armas : MonoBehaviour
             nombre_arma.text = s.Get_Nombre();
             descripcion_arma.text = s.Get_Descripcion();
             descripcion_arma.text += "- Potencia: " + s.Get_Daño() + "pt \n \n- energia: " + s.Get_Energy() + "pt";
+            ms.PlaySound_Advance();
         }
         b.colors = cb;
     }

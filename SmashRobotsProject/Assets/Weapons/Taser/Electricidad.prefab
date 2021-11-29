@@ -42,7 +42,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7724304012022626520}
   serializedVersion: 7
-  lengthInSec: 0.31
+  lengthInSec: 0.72
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -117,8 +117,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.24
-      minScalar: 0.12
+      scalar: 0.5
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -662,7 +662,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 3
+    angle: 0.06
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.75
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 171.7
+      scalar: 190
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2693,7 +2693,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.65
+      scalar: 1.37
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2850,7 +2850,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 5.9
+    frequency: 3.89
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -2859,7 +2859,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.58
+      scalar: 3.88
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4824,12 +4824,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7724304012022626520}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 2.92
+  m_Radius: 1.29
+  m_Height: 11
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 1.86}
+  m_Center: {x: 0, y: 0, z: 6.19}
 --- !u!114 &-214057667389039365
 MonoBehaviour:
   m_ObjectHideFlags: 0

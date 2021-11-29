@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.65
+      scalar: 1.3
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.63
+      scalar: -1.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 119.5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2569,7 +2569,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8
+      scalar: 0.91
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2623,7 +2623,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 1
+    dampen: 0.12
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -4922,8 +4922,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.65
-      minScalar: 0.6
+      scalar: 1
+      minScalar: 0.7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4975,7 +4975,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -5.05
+      scalar: -7.91
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5672,7 +5672,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 99.66
+      scalar: 230
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9637,6 +9637,6 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.29
-  m_Height: 6.06
+  m_Height: 11
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -3.11}
+  m_Center: {x: 0, y: 0, z: -6.05}

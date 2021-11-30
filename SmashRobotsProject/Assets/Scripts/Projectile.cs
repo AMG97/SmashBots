@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour
     float speed;
 
     float time_alive;
+
+    float time_colision = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +29,41 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (time_alive > Time.deltaTime)
+        if (speed != 0 && time_alive > Time.deltaTime)
         {
+            //if (time_alive > Time.deltaTime)
+            //{
             Bot_Movement bot = other.GetComponent<Bot_Movement>();
             if (bot != null)
                 bot.Daño(damage);
-            //Hacer daño a lo que se haya chocao
-            Destroy(gameObject);
+            else
+            {
+                Enemy_Controller e = other.GetComponent<Enemy_Controller>();
+                if (e != null)
+                    e.Daño(damage);
+            }
+            if(speed!=0)
+                Destroy(gameObject);
+            //}
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        time_colision += Time.deltaTime;
+        if(time_colision >= max_time_alive/10)
+        {
+            time_colision = 0;
+
+            Bot_Movement bot = other.GetComponent<Bot_Movement>();
+            if (bot != null)
+                bot.Daño(damage/10);
+            else
+            {
+                Enemy_Controller e = other.GetComponent<Enemy_Controller>();
+                if (e != null)
+                    e.Daño(damage/10);
+            }
         }
     }
 

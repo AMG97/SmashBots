@@ -13,10 +13,15 @@ public class Game_Controller : MonoBehaviour
     GameObject JeanBot;
 
     [SerializeField]
+    GameObject Enemy;
+
+    [SerializeField]
     Camera_Follow cam;
 
     GameObject player;
+    GameObject enemy;
     Bot_Movement m;
+    Enemy_Controller e_c;
 
     [SerializeField]
     Vida v;
@@ -45,7 +50,9 @@ public class Game_Controller : MonoBehaviour
     private void Start()
     {
         player = Instantiate(JeanBot);
+        enemy = Instantiate(Enemy);
         m = player.GetComponent<Bot_Movement>();
+        e_c = enemy.GetComponent<Enemy_Controller>();
 
         Transform arma_detras_pos = player.transform.GetChild(4);
         Transform arma_derecha_pos = player.transform.GetChild(5);
@@ -153,6 +160,7 @@ public class Game_Controller : MonoBehaviour
         contador_text.gameObject.SetActive(false);
 
         m.StartPlayer();
+        e_c.StartEnemy();
 
         StartCoroutine(Timer());
         Debug.Log("TIMER");

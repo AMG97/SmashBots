@@ -47,12 +47,17 @@ public class Game_Controller : MonoBehaviour
     [SerializeField]
     int min=3,sec=0;
 
+    [SerializeField]
+    float t_arma;
+
     private void Start()
     {
         player = Instantiate(JeanBot);
         enemy = Instantiate(Enemy);
         m = player.GetComponent<Bot_Movement>();
         e_c = enemy.GetComponent<Enemy_Controller>();
+
+        e_c.Set_Fin_Partida(gameObject.GetComponent<Fin_Partida>());
 
         Transform arma_detras_pos = player.transform.GetChild(4);
         Transform arma_derecha_pos = player.transform.GetChild(5);
@@ -128,13 +133,14 @@ public class Game_Controller : MonoBehaviour
 
         cam.robot = player;
         cam.StartFollow();
-        
+        Time.timeScale = 1f;
         StartCoroutine(CountDown());        
     }
 
     public void Shoot1()
     {
         m.DispararArma1();
+
     }
 
     public void Shoot2()
@@ -163,13 +169,12 @@ public class Game_Controller : MonoBehaviour
         e_c.StartEnemy();
 
         StartCoroutine(Timer());
-        Debug.Log("TIMER");
     }
 
     IEnumerator Timer()
     {
 
-        while (min >= 0 || sec >= 0)
+        while (min > 0 || sec > 0)
         {
             if(sec >= 10)
                 timer_text.text =  min.ToString() + ":" + sec.ToString();
@@ -183,8 +188,17 @@ public class Game_Controller : MonoBehaviour
                 min--;
             }
         }
-        Debug.Log("FIN");
-        ////AQUI PONER MENU FINAL
+        if(Time.timeScale > 0f)
+        {
+            if (m.GetVida() > e_c.Get_Vida())
+            {
+                gameObject.GetComponent<Fin_Partida>().Terminar(1);
+            }
+            else
+            {
+                gameObject.GetComponent<Fin_Partida>().Terminar(0);
+            }
+        }
         
     }
 }

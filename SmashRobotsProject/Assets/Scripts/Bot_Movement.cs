@@ -118,4 +118,9 @@ public class Bot_Movement : MonoBehaviour
     {
         start = true;
     }
+
+    public float GetVida()
+    {
+        return vida.Get_Vida();
+    }
 }

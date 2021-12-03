@@ -4843,5 +4843,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_time_alive: 1
-  damage: 15
+  damage: 25
   speed: 0

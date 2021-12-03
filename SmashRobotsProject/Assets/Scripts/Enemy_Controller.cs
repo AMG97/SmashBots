@@ -20,6 +20,8 @@ public class Enemy_Controller : MonoBehaviour
     [SerializeField]
     float velocidad;
 
+    Fin_Partida fin;
+
     bool start = false;
     
     // Start is called before the first frame update
@@ -36,9 +38,9 @@ public class Enemy_Controller : MonoBehaviour
         {
             slider.value = Mathf.Lerp(slider.value, (vida / max_vida), velocidad);
 
-            if (vida <= 0)
+            if (slider.value <= 0.01 && Time.timeScale > 0)
             {
-                Debug.Log("Muerto");
+                fin.Terminar(1);
             }
         }
     }
@@ -52,6 +54,8 @@ public class Enemy_Controller : MonoBehaviour
     public void Daño(float d)
     {
         vida -= d;
+        //if (vida <= 0)
+          //  fin.Terminar(1);
     }
 
     public void StartEnemy()
@@ -59,5 +63,14 @@ public class Enemy_Controller : MonoBehaviour
         start = true;
     }
 
+    public float Get_Vida()
+    {
+        return vida;
+    }
+
+    public void Set_Fin_Partida(Fin_Partida f)
+    {
+        fin = f;
+    }
 
 }

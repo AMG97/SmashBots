@@ -7,6 +7,11 @@ public class Menus : MonoBehaviour
 {
     public Elegir_Armas armas;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void LoadGame()
     {
         if (armas.GetArma(0) != null)

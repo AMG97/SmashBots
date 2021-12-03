@@ -36,6 +36,47 @@ public class Elegir_Armas : MonoBehaviour
         b_pistola.onClick.AddListener(delegate { Arma(o_pistola, b_pistola); });
         b_lanzallamas.onClick.AddListener(delegate { Arma(o_lanzallamas, b_lanzallamas); });
 
+        switch (Game_Controller.arma_1)
+        {
+            case "BBGun(Clone)":
+                Arma(o_pistola, b_pistola);
+                break;
+            case "Lanzallamas(Clone)":
+                Arma(o_lanzallamas, b_lanzallamas);
+                break;
+            case "RayoLaser(Clone)":
+                Arma(o_laser, b_laser);
+                break;
+            case "Taser(Clone)":
+                Arma(o_taser, b_taser);
+                break;
+            case "LanzaMinas(Clone)":
+                Arma(o_mina, b_mina);
+                break;
+        }
+
+        switch (Game_Controller.arma_2)
+        {
+            case "BBGun(Clone)":
+                Arma(o_pistola, b_pistola);
+                break;
+            case "Lanzallamas(Clone)":
+                Arma(o_lanzallamas, b_lanzallamas);
+                break;
+            case "RayoLaser(Clone)":
+                Arma(o_laser, b_laser);
+                break;
+            case "Taser(Clone)":
+                Arma(o_taser, b_taser);
+                break;
+            case "LanzaMinas(Clone)":
+                Arma(o_mina, b_mina);
+                break;
+        }
+
+        Game_Controller.arma_1 = "BBGun(Clone)";
+        Game_Controller.arma_2 = "Lanzallamas(Clone)";
+
     }
 
     public void Arma(GameObject a,Button b)

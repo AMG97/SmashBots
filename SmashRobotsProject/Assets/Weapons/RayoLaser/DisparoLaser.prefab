@@ -129,5 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_time_alive: 3.68
-  damage: 10
+  damage: 15
   speed: 5.72

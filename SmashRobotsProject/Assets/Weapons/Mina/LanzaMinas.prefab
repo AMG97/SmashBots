@@ -115,8 +115,15 @@ MonoBehaviour:
   energia: 50
   punto_disparo: {fileID: 1952535686516575871}
   nombre: Lanza Minas
-  descripcion: "Suelta minas explosivas que explotar\xE1n cuando alguien pase por
-    encima de ellas\n\n\n- Remoto\n\n"
+  descripcion: 'Suelta minas explosivas que explotaran cuando alguien pase por encima
+    de ellas
+
+
+
+    - Remoto
+
+
+'
 --- !u!1 &3770213960436616740
 GameObject:
   m_ObjectHideFlags: 0

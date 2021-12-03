@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 7488266951903484009, guid: 20cc645d739035340806da2114f1e4db, type: 3}
-  energia: 30
+  energia: 45
   punto_disparo: {fileID: 7739614762934240836}
   nombre: Pistola Laser
   descripcion: 'Lanza rayos laser a gran velocidad a tu oponente

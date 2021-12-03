@@ -10,6 +10,9 @@ public class Vida : MonoBehaviour
     float vida, vida_max = 100;
     [SerializeField]
     float velocidad;
+
+    [SerializeField]
+    Fin_Partida f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,11 @@ public class Vida : MonoBehaviour
         barra_vida.fillAmount = Mathf.Lerp(barra_vida.fillAmount, (vida / vida_max), velocidad);
         barra_vida.color = Color.Lerp(Color.red, Color.green, (vida / vida_max));
 
+        if (barra_vida.fillAmount <= 0.01 && Time.timeScale > 0)
+        {
+            f.Terminar(0);
+        }
+
 
     }
 
@@ -31,8 +39,13 @@ public class Vida : MonoBehaviour
         if (vida > 0)
         {
             vida -= daño;
-            if (vida <= 0)
-                Debug.Log("Muerto"); //Aqui hacer algo luego de saltar la pantalla de derrota
+            //if (vida <= 0)
+                //f.Terminar(0);
         }
+    }
+
+    public float Get_Vida()
+    {
+        return vida;
     }
 }

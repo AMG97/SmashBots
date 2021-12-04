@@ -22,11 +22,11 @@ public class Shoot : MonoBehaviour
         audio = GetComponent<AudioSource>();
     }
 
-    public void Shoot_Proyectile()
+    public void Shoot_Proyectile(float scale = 1)
     {
         GameObject g;
         if(projectile.name == "Electricidad" || projectile.name == "Fuego")
-            g=Instantiate(projectile, gameObject.transform);
+            g=Instantiate(projectile, punto_disparo.transform);
         else 
             g=Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);
         if (projectile.name == "Mina")
@@ -39,6 +39,11 @@ public class Shoot : MonoBehaviour
         else
         {
             audio.Play();
+        }
+
+        if(scale != 1)
+        {
+            g.transform.localScale = new Vector3(scale, scale, scale);
         }
     }
 

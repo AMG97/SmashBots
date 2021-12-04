@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
                 bot.Daño(damage);
             else
             {
-                Enemy_Controller e = other.GetComponent<Enemy_Controller>();
+                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
                 if (e != null)
                     e.Daño(damage);
             }
@@ -60,7 +60,7 @@ public class Projectile : MonoBehaviour
                 bot.Daño(damage/10);
             else
             {
-                Enemy_Controller e = other.GetComponent<Enemy_Controller>();
+                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
                 if (e != null)
                     e.Daño(damage/10);
             }

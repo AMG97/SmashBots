@@ -166,7 +166,7 @@ public class Game_Controller : MonoBehaviour
         contador_text.gameObject.SetActive(false);
 
         m.StartPlayer();
-        e_c.StartEnemy();
+        e_c.StartEnemy(player);
 
         StartCoroutine(Timer());
     }

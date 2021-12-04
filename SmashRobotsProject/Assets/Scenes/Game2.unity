@@ -2044,7 +2044,7 @@ GameObject:
   - component: {fileID: 795166020}
   - component: {fileID: 795166019}
   - component: {fileID: 795166018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5076,7 +5076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JeanBot: {fileID: 1607819434897624256, guid: 28ed796671dd35c4c9fac9eaff3e862d, type: 3}
-  Enemy: {fileID: 814636103253864134, guid: 59b2f7d79f8093d43a596f0501bb60c7, type: 3}
+  Enemy: {fileID: 9025574930875890217, guid: 9b3c0754e6708a941ad852c097ed06f9, type: 3}
   cam: {fileID: 963194229}
   v: {fileID: 1971380248}
   e: {fileID: 1971380247}

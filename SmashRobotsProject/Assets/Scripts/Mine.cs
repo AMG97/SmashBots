@@ -13,6 +13,10 @@ public class Mine : MonoBehaviour
     float damage;
 
 
+    [SerializeField]
+    float distance_back;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +33,20 @@ public class Mine : MonoBehaviour
     {
         Instantiate(explosion, gameObject.transform.position + new Vector3(0,0.1f,0), gameObject.transform.rotation);
         yield return new WaitForSeconds(0.15f);
-        other.GetComponent<Rigidbody>().AddForce(new Vector3(0, explosion_force, 0));
+        other.GetComponentInChildren<Rigidbody>().AddForce(new Vector3(0, explosion_force, 0));
         Bot_Movement bot = other.GetComponent<Bot_Movement>();
         if (bot != null)
+        {
             bot.Daño(damage);
+        }
+        else
+        {
+            Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
+            if (e != null)
+            {
+                e.Daño(damage);
+            }
+        }
         Destroy(gameObject);
     }
 

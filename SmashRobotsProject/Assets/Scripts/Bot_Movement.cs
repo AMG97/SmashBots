@@ -59,8 +59,6 @@ public class Bot_Movement : MonoBehaviour
 
                 rb.transform.rotation = Quaternion.Lerp(transform.rotation, qr, max_angle * Time.deltaTime);
 
-                Vector3 vel = rb.velocity;
-
 
                 rb.AddForce(-rb.transform.forward * speed);
 

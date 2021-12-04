@@ -97,7 +97,7 @@ public class Enemy_Controller : MonoBehaviour
 
             }
 
-            OnDrawGizmos();
+            //OnDrawGizmos();
         }
     }
 
@@ -151,14 +151,16 @@ public class Enemy_Controller : MonoBehaviour
         if (check_atack_act > t_check_atack)
         {
 
-            if (d < distancia_min * 1.3 && arma1_time > arma_disparar + Random.Range(-1,1))
+            if (d < distancia_min * 1.3 && arma1_time > arma_disparar + Random.Range(-1,1) && arma2_time > arma_disparar/4)
             {
-                Debug.Log("Cerca y ATACO");
                 arma_1.Shoot_Proyectile();
                 arma1_time = 0;
-                StartCoroutine(RunAwayLater(1));
+                if(Random.Range(0,100)>30)
+                    StartCoroutine(RunAwayLater(1));
+                else
+                    StartCoroutine(RunAwayLater(1));
             }
-            else if (t_in_following > 3 && arma2_time > arma_disparar + Random.Range(-1,1))
+            else if (t_in_following > 3 && arma2_time > arma_disparar + Random.Range(-1,1) && arma1_time > arma_disparar / 4)
             {
                 arma_2.Shoot_Proyectile();
                 arma2_time = 0;
@@ -185,7 +187,7 @@ public class Enemy_Controller : MonoBehaviour
     {
         t_in_following = 0;
         runAwayPoint = transform.position;
-        runAwayPoint.z -= distancia_huir + Random.Range(-1,1);
+        runAwayPoint.z -= distancia_huir + Random.Range(-3,1);
         if (runAwayPoint.z < -6.5f)
             runAwayPoint.z = -6.5f;
         float x;
@@ -224,11 +226,11 @@ public class Enemy_Controller : MonoBehaviour
         ChooseRunAwayPoint();
         estado = EstadoIA.Huir;
     }
-
+/*
      void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(runAwayPoint, 0.4f);
     }
-
+*/
 }

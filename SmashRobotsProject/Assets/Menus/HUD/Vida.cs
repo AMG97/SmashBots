@@ -8,8 +8,7 @@ public class Vida : MonoBehaviour
     public Image barra_vida;
 
     float vida, vida_max = 100;
-    [SerializeField]
-    float velocidad;
+    const float velocidad = 2;
 
     [SerializeField]
     Fin_Partida f;
@@ -17,7 +16,7 @@ public class Vida : MonoBehaviour
     void Start()
     {
         vida = vida_max;
-        velocidad *= Time.deltaTime;
+        //velocidad *= Time.deltaTime;
     }
 
     // Update is called once per frame

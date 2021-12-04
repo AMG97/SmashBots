@@ -9,14 +9,15 @@ public class Energia : MonoBehaviour
 
     float energia, energia_max = 100;
     [SerializeField]
-    float velocidad, incremento;
+    float incremento;
+
+    const float velocidad = 2;
     // Start is called before the first frame update
     void Start()
     {
         energia = 0;
         barra_energia.fillAmount = 0;
         barra_energia.color = Color.grey;
-        velocidad *= Time.deltaTime;
     }
 
     // Update is called once per frame

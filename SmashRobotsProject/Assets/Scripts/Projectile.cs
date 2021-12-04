@@ -12,6 +12,9 @@ public class Projectile : MonoBehaviour
     float time_alive;
 
     float time_colision = 0;
+
+
+    float count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +51,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         time_colision += Time.deltaTime;
         if(time_colision >= max_time_alive/10)
@@ -65,10 +68,29 @@ public class Projectile : MonoBehaviour
                     e.Daño(damage/10);
             }
         }
-    }
+    }*/
 
     public float Daño()
     {
         return damage;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        count++;
+        //Debug.Log(count);
+        if(count < 80)
+        {
+            Bot_Movement bot = other.GetComponent<Bot_Movement>();
+            if (bot != null)
+                bot.Daño(damage / 80);
+            else
+            {
+                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
+                Debug.Log(e);
+                if (e != null)
+                    e.Daño(damage / 80);
+            }
+        }
     }
 }

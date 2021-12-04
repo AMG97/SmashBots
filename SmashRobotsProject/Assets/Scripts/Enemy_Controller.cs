@@ -186,6 +186,8 @@ public class Enemy_Controller : MonoBehaviour
         t_in_following = 0;
         runAwayPoint = transform.position;
         runAwayPoint.z -= distancia_huir + Random.Range(-1,1);
+        if (runAwayPoint.z < -6.5f)
+            runAwayPoint.z = -6.5f;
         float x;
         do
         {

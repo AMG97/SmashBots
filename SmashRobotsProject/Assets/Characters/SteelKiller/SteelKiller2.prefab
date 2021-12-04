@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5036706654609316497}
   - component: {fileID: 4478687816456883528}
+  - component: {fileID: 7795972237276991393}
+  - component: {fileID: 7948503842055662241}
   m_Layer: 0
   m_Name: SteelKiller2
   m_TagString: Untagged
@@ -51,7 +53,7 @@ MonoBehaviour:
   speed_r: 2
   speed_m: 1.5
   distancia_min: 1.5
-  child: {fileID: 584443612743096465}
+  rb: {fileID: 0}
   arma_1: {fileID: 6939794857442022638}
   arma_2: {fileID: 4654192487193888340}
   arma_disparar: 5
@@ -59,6 +61,35 @@ MonoBehaviour:
   runAwayPoint: {x: 0, y: 0, z: 0}
   distancia_huir: 4
   t_check_atack: 0.2
+--- !u!54 &7795972237276991393
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025574930875890217}
+  serializedVersion: 2
+  m_Mass: 1500
+  m_Drag: 2
+  m_AngularDrag: 2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7948503842055662241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025574930875890217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.77, y: 0.36, z: 0.9}
+  m_Center: {x: 0.000029489398, y: 0.17, z: -0.17}
 --- !u!1001 &583682114119773421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148,6 +179,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1821491597260424360, guid: 59b2f7d79f8093d43a596f0501bb60c7, type: 3}
+    - {fileID: 544727652597447227, guid: 59b2f7d79f8093d43a596f0501bb60c7, type: 3}
+    - {fileID: 544727652597447226, guid: 59b2f7d79f8093d43a596f0501bb60c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59b2f7d79f8093d43a596f0501bb60c7, type: 3}
 --- !u!4 &584443612743096465 stripped
 Transform:

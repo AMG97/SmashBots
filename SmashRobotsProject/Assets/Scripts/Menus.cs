@@ -22,7 +22,7 @@ public class Menus : MonoBehaviour
         if (armas.GetArma(1) != null)
             Game_Controller.arma_2 = armas.GetArma(1).name;
         else
-            Game_Controller.arma_2 = "Lanzallamas(Clone)";
+            Game_Controller.arma_2 = "Taser(Clone)";
 
         SceneManager.LoadScene("Game2", LoadSceneMode.Single);
     }

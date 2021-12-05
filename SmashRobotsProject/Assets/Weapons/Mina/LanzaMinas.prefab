@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 7245105131432576632, guid: 371e5ad3e14cdbd47b60387cb572a7f8, type: 3}
-  energia: 50
+  energia: 60
   punto_disparo: {fileID: 1952535686516575871}
   nombre: Lanza Minas
   descripcion: 'Suelta minas explosivas que explotaran cuando alguien pase por encima

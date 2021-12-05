@@ -56,7 +56,10 @@ public class Enemy_Controller : MonoBehaviour
     float distancia_huir;
 
     [SerializeField]
-    float t_check_atack;
+    float t_check_atack,rotation_wheel;
+
+    [SerializeField]
+    Transform FrontLeftWheel, FrontRightWheel, BackLeftWheel, BackRightWheel;
 
     float check_atack_act;
 
@@ -77,6 +80,11 @@ public class Enemy_Controller : MonoBehaviour
             arma1_time += Time.deltaTime;
             arma2_time += Time.deltaTime;
             check_atack_act += Time.deltaTime;
+
+            FrontLeftWheel.Rotate(new Vector3(-rotation_wheel * Time.deltaTime, 0, 0));
+            FrontRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
+            BackRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
+            BackLeftWheel.Rotate(new Vector3(-rotation_wheel * Time.deltaTime, 0, 0));
 
             slider.value = Mathf.Lerp(slider.value, (vida / max_vida), velocidad_vida);
 
@@ -164,6 +172,8 @@ public class Enemy_Controller : MonoBehaviour
             {
                 arma_2.Shoot_Proyectile();
                 arma2_time = 0;
+                if (Random.Range(0, 100) > 80)
+                    StartCoroutine(RunAwayLater(1));
             }
 
             check_atack_act = 0;

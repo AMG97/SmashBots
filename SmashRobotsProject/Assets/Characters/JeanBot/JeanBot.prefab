@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 1914441679002532727}
   - component: {fileID: 1914441679002532724}
   - component: {fileID: 1914441679002532726}
+  - component: {fileID: 8489782213845473963}
   m_Layer: 0
   m_Name: JeanBot
   m_TagString: Untagged
@@ -208,6 +209,14 @@ MonoBehaviour:
   arma2: {fileID: 0}
   vida: {fileID: 0}
   energia: {fileID: 0}
+--- !u!81 &8489782213845473963
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607819434897624256}
+  m_Enabled: 1
 --- !u!1 &4012462919393727702
 GameObject:
   m_ObjectHideFlags: 0

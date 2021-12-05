@@ -43,6 +43,11 @@ public class Game_Controller : MonoBehaviour
     int contador_number=3;
 
     [SerializeField]
+    AudioSource au_cont;
+    [SerializeField]
+    AudioClip cont, ya;
+
+    [SerializeField]
     TMPro.TextMeshProUGUI timer_text;
     [SerializeField]
     int min=3,sec=0;
@@ -153,6 +158,8 @@ public class Game_Controller : MonoBehaviour
         while(contador_number > 0)
         {
             contador_text.text = contador_number.ToString();
+            au_cont.clip = cont;
+            au_cont.Play();
 
             yield return new WaitForSeconds(1f);
 
@@ -160,6 +167,8 @@ public class Game_Controller : MonoBehaviour
         }
 
         contador_text.text = "YA!";
+        au_cont.clip = ya;
+        au_cont.Play();
 
         yield return new WaitForSeconds(1f);
 

@@ -79,17 +79,17 @@ public class Projectile : MonoBehaviour
     {
         count++;
         //Debug.Log(count);
-        if(count < 80)
+        if(count < 60)
         {
             Bot_Movement bot = other.GetComponent<Bot_Movement>();
             if (bot != null)
-                bot.Daño(damage / 80);
+                bot.Daño(damage / 60);
             else
             {
                 Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
                 Debug.Log(e);
                 if (e != null)
-                    e.Daño(damage / 80);
+                    e.Daño(damage / 60);
             }
         }
     }

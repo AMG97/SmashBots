@@ -42,10 +42,17 @@ public class Mine : MonoBehaviour
         }
         else
         {
-            Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
-            if (e != null)
+            Online_Player o = other.GetComponent<Online_Player>();
+            if (o != null)
+                o.Daño(damage / 60);
+            else
             {
-                e.Daño(damage);
+
+                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
+                if (e != null)
+                {
+                    e.Daño(damage);
+                }
             }
         }
         Destroy(gameObject);

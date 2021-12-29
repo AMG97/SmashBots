@@ -5396,8 +5396,8 @@ MonoBehaviour:
   JeanBot: {fileID: 1607819434897624256, guid: 28ed796671dd35c4c9fac9eaff3e862d, type: 3}
   Enemy: {fileID: 9025574930875890217, guid: 9b3c0754e6708a941ad852c097ed06f9, type: 3}
   cam: {fileID: 963194229}
-  v: {fileID: 1971380248}
-  e: {fileID: 1971380247}
+  v: {fileID: 0}
+  e: {fileID: 0}
   mina: {fileID: 3182140413793816508, guid: 4ee831f1f663ba4439e501d725092cb3, type: 3}
   pistola: {fileID: 8770750381199173491, guid: 4958c1ad79f5e584d85a18d087c4866d, type: 3}
   taser: {fileID: 6389116474070628650, guid: 071fe2ac76c7cf54b8646b2f67e81e19, type: 3}
@@ -5739,6 +5739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 4092875865532120588, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4322542749864405205, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -5901,7 +5905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703002966559, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703179889812, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5981,7 +5985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703437650694, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703745318955, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6163,31 +6167,15 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 130
       objectReference: {fileID: 0}
+    - target: {fileID: 8315169274537420741, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4322542749864405205, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
+    - {fileID: 7703987703002966557, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
+    - {fileID: 7703987703437650692, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
---- !u!114 &1971380247 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7703987703437650692, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
-  m_PrefabInstance: {fileID: 1971380246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85d3cce22a66dfe41b1ee62360ba8f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1971380248 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7703987703002966557, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
-  m_PrefabInstance: {fileID: 1971380246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b1a0dec6428c14ea150099b40dd1c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1971380249 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1716690374401052690, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}

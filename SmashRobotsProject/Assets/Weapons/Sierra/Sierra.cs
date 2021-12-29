@@ -42,6 +42,9 @@ public class Sierra : MonoBehaviour
             bot.Daño(damage);
         else
         {
+            Online_Player o = other.GetComponent<Online_Player>();
+            if (o != null)
+                o.Daño(damage);
             Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
             if (e != null)
                 e.Daño(damage);

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
-public class Online_Player : MonoBehaviour
+public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable
 {
     PhotonView view;
     FixedJoystick joystick;
@@ -18,14 +19,35 @@ public class Online_Player : MonoBehaviour
     [SerializeField]
     Transform FrontLeftWheel, FrontRightWheel, BackLeftWheel, BackRightWheel;
 
-    public Camera_Follow cam;
+    [SerializeField]
+    Slider slider_vida, slider_energia;
+
+    Camera_Follow cam;
 
     int add = 0;
+
+    //Cosas de vida
+    float vida, vida_max = 100;
+    const float velocidad_vida = 2;
+    Image barra_vida;
+    Canvas canvas;
+
+    //Cosas energia
+    float energia, energia_max = 100;
+    [SerializeField]
+    float incremento;
+    Image barra_energia;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        vida = vida_max;
+        
+
+        energia = 0;
+
+
         view = GetComponent<PhotonView>();
         joystick = GameObject.Find("Joystick").GetComponent<FixedJoystick>();
         rb = GetComponent<Rigidbody>();
@@ -41,6 +63,15 @@ public class Online_Player : MonoBehaviour
         {
             cam.robot = gameObject;
             cam.StartFollow();
+
+            slider_vida.gameObject.SetActive(false);
+            barra_vida = GameObject.Find("Vida").GetComponent<Image>();
+            barra_energia = GameObject.Find("Energia").GetComponent<Image>();
+        }
+        else
+        {
+            GetComponent<AudioListener>().enabled = false;
+            canvas = slider_vida.gameObject.GetComponentInParent<Canvas>();
         }
 
     }
@@ -48,8 +79,14 @@ public class Online_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        updateVidaEnergia();
+
+
         if(view.IsMine)
         {
+
             float x = joystick.Vertical;
             float z = joystick.Horizontal;
 
@@ -81,5 +118,62 @@ public class Online_Player : MonoBehaviour
                 rb.velocity = new Vector3(0, rb.velocity.y, 0);
             }
         }
+    }
+
+    void updateVidaEnergia()
+    {
+        if(view.IsMine)
+        {
+            barra_vida.fillAmount = Mathf.Lerp(barra_vida.fillAmount, (vida / vida_max), velocidad_vida);
+            barra_vida.color = Color.Lerp(Color.red, Color.green, (vida / vida_max));
+
+            if (barra_vida.fillAmount <= 0.01 && Time.timeScale > 0)
+            {
+                //f.Terminar(0);
+                Debug.Log("FINN");
+            }
+
+
+            if (energia < energia_max)
+            {
+                energia += incremento * Time.deltaTime;
+                if (energia > energia_max)
+                    energia = energia_max;
+            }
+
+
+            barra_energia.fillAmount = Mathf.Lerp(barra_energia.fillAmount, (energia / energia_max), velocidad_vida);
+            barra_energia.color = Color.Lerp(Color.gray, Color.blue, (energia / energia_max));
+        }
+
+        else
+        {
+            slider_vida.value = Mathf.Lerp(slider_vida.value, (vida / vida_max), velocidad_vida);
+            slider_energia.value = Mathf.Lerp(slider_energia.value, (energia / energia_max), velocidad_vida);
+            
+            canvas.transform.LookAt(cam.transform);
+            canvas.transform.Rotate(new Vector3(0, 180, 0));
+        }
+
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            stream.SendNext(vida);
+            stream.SendNext(energia);
+        }
+        else
+        {
+            vida = (float)stream.ReceiveNext();
+            energia = (float)stream.ReceiveNext();
+        }
+    }
+
+    public void Daño(float damage)
+    {
+        if(view.IsMine)
+            vida -= damage;
     }
 }

@@ -41,9 +41,15 @@ public class Projectile : MonoBehaviour
                 bot.Daño(damage);
             else
             {
-                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
-                if (e != null)
-                    e.Daño(damage);
+                Online_Player o = other.GetComponent<Online_Player>();
+                if (o != null)
+                    o.Daño(damage / 60);
+                else
+                {
+                    Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
+                    if (e != null)
+                        e.Daño(damage);
+                }
             }
             if(speed!=0)
                 Destroy(gameObject);
@@ -86,14 +92,16 @@ public class Projectile : MonoBehaviour
                 bot.Daño(damage / 60);
             else
             {
-                //Online_Player o = other.GetComponent<Online_Player>();
-                //if (o != null)
-                    //o.Daño(damage / 60);
-
-                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
-                Debug.Log(e);
-                if (e != null)
-                    e.Daño(damage / 60);
+                Online_Player o = other.GetComponent<Online_Player>();
+                if (o != null)
+                    o.Daño(damage / 60);
+                else
+                {
+                    Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
+                    Debug.Log(e);
+                    if (e != null)
+                        e.Daño(damage / 60);
+                }
             }
         }
     }

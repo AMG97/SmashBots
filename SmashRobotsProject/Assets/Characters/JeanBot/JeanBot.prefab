@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1914441679002532727}
-  speed: 23000
+  speed: 1250000
   max_angle: 2
   rotation_wheel: 160
   FrontLeftWheel: {fileID: 2097498670006207970}

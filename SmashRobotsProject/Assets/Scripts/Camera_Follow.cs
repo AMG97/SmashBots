@@ -23,5 +23,11 @@ public class Camera_Follow : MonoBehaviour
         started = true;
         if (posicionRelativa.Equals(new Vector3(0, 0, 0)))
             posicionRelativa = transform.position - robot.transform.position;
+        else if (Mathf.Abs(robot.transform.rotation.eulerAngles.y) > 170)
+        {
+            posicionRelativa = new Vector3(posicionRelativa.x, posicionRelativa.y, posicionRelativa.z * -1);
+            Vector3 rot = transform.rotation.eulerAngles;
+            transform.eulerAngles=(new Vector3(rot.x, rot.y +180, rot.z));
+        }
     }
 }

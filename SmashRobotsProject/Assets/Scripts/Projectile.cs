@@ -86,6 +86,10 @@ public class Projectile : MonoBehaviour
                 bot.Daño(damage / 60);
             else
             {
+                //Online_Player o = other.GetComponent<Online_Player>();
+                //if (o != null)
+                    //o.Daño(damage / 60);
+
                 Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
                 Debug.Log(e);
                 if (e != null)

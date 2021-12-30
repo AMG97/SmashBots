@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
 
-public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable
+public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInstantiateMagicCallback
 {
     PhotonView view;
     FixedJoystick joystick;
@@ -22,9 +22,12 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField]
     Slider slider_vida, slider_energia;
 
+    Shoot arma1=null, arma2=null;
+
     Camera_Follow cam;
 
     int add = 0;
+    public static bool start = false;
 
     //Cosas de vida
     float vida, vida_max = 100;
@@ -37,6 +40,19 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField]
     float incremento;
     Image barra_energia;
+
+    [SerializeField]
+    GameObject mina, pistola, taser, laser, lanzallamas;
+
+    GameObject a1, a2;
+
+
+    Image i_boton_1, i_boton_2;
+
+    [SerializeField]
+    Sprite i_mina, i_pistola, i_taser, i_laser, i_lanzallamas;
+
+    Transform arma_detras_pos, arma_derecha_pos, arma_izquierda_pos;
 
 
     // Start is called before the first frame update
@@ -80,42 +96,42 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable
     void Update()
     {
 
-
-        updateVidaEnergia();
-
-
-        if(view.IsMine)
+        if (start == true)
         {
-
-            float x = joystick.Vertical;
-            float z = joystick.Horizontal;
-
-
-            if (x != 0 || z != 0)
+            updateVidaEnergia();
+            if (view.IsMine)
             {
-                float hipo = Mathf.Sqrt(x * x + z * z);
-                float dif = 1.0f / hipo;
 
-                x = x * dif;
-                z = z * dif;
-
-                float rot_y = Mathf.Atan2(z, x) * 180 / Mathf.PI;
-                var qr = Quaternion.Euler(0, rot_y+add, 0);
+                float x = joystick.Vertical;
+                float z = joystick.Horizontal;
 
 
-                rb.transform.rotation = Quaternion.Lerp(transform.rotation, qr, max_angle * Time.deltaTime);
+                if (x != 0 || z != 0)
+                {
+                    float hipo = Mathf.Sqrt(x * x + z * z);
+                    float dif = 1.0f / hipo;
+
+                    x = x * dif;
+                    z = z * dif;
+
+                    float rot_y = Mathf.Atan2(z, x) * 180 / Mathf.PI;
+                    var qr = Quaternion.Euler(0, rot_y + add, 0);
 
 
-                rb.AddForce(-rb.transform.forward * speed*Time.deltaTime);
+                    rb.transform.rotation = Quaternion.Lerp(transform.rotation, qr, max_angle * Time.deltaTime);
 
-                FrontLeftWheel.Rotate(new Vector3(-rotation_wheel * Time.deltaTime, 0, 0));
-                FrontRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
-                BackRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
-                BackLeftWheel.Rotate(new Vector3(-rotation_wheel * Time.deltaTime, 0, 0));
-            }
-            else
-            {
-                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+
+                    rb.AddForce(-rb.transform.forward * speed * Time.deltaTime);
+
+                    FrontLeftWheel.Rotate(new Vector3(-rotation_wheel * Time.deltaTime, 0, 0));
+                    FrontRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
+                    BackRightWheel.Rotate(new Vector3(rotation_wheel * Time.deltaTime, 0, 0));
+                    BackLeftWheel.Rotate(new Vector3(-rotation_wheel * Time.deltaTime, 0, 0));
+                }
+                else
+                {
+                    rb.velocity = new Vector3(0, rb.velocity.y, 0);
+                }
             }
         }
     }
@@ -175,5 +191,97 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable
     {
         if(view.IsMine)
             vida -= damage;
+    }
+
+    public void SetArmas(GameObject a, GameObject b)
+    {
+        arma1 = a.GetComponent<Shoot>();
+        arma2 = a.GetComponent<Shoot>();
+    }
+
+
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        object[] a = info.photonView.InstantiationData;
+
+        i_boton_1 = GameObject.Find("Image_Arma1").GetComponent<Image>();
+        i_boton_2 = GameObject.Find("Image_Arma2").GetComponent<Image>();
+
+        Transform arma_detras_pos = transform.GetChild(4);
+        Transform arma_derecha_pos = transform.GetChild(5);
+        Transform arma_izquierda_pos = transform.GetChild(6);
+
+        GameObject a1=null, a2=null;
+
+        switch ((string)a[0])
+        {
+            case "LanzaMinas(Clone)":
+                a1 = Instantiate(mina, arma_detras_pos);
+                i_boton_1.sprite = i_mina;
+                break;
+
+            case "BBGun(Clone)":
+                a1 = Instantiate(pistola, arma_derecha_pos);
+                i_boton_1.sprite = i_pistola;
+                break;
+
+            case "Lanzallamas(Clone)":
+                a1 = Instantiate(lanzallamas, arma_derecha_pos);
+                i_boton_1.sprite = i_lanzallamas;
+                break;
+
+            case "RayoLaser(Clone)":
+                a1 = Instantiate(laser, arma_derecha_pos);
+                i_boton_1.sprite = i_laser;
+                break;
+
+            case "Taser(Clone)":
+                a1 = Instantiate(taser, arma_derecha_pos);
+                i_boton_1.sprite = i_taser;
+                break;
+        }
+
+        switch ((string)a[1])
+        {
+            case "LanzaMinas(Clone)":
+                a2 = Instantiate(mina, arma_detras_pos);
+                i_boton_2.sprite = i_mina;
+                break;
+
+            case "BBGun(Clone)":
+                a2 = Instantiate(pistola, arma_izquierda_pos);
+                i_boton_2.sprite = i_pistola;
+                break;
+
+            case "Lanzallamas(Clone)":
+                a2 = Instantiate(lanzallamas, arma_izquierda_pos);
+                i_boton_2.sprite = i_lanzallamas;
+                break;
+
+            case "RayoLaser(Clone)":
+                a2 = Instantiate(laser, arma_izquierda_pos);
+                i_boton_2.sprite = i_laser;
+                break;
+
+            case "Taser(Clone)":
+                a2 = Instantiate(taser, arma_izquierda_pos);
+                i_boton_2.sprite = i_taser;
+                break;
+        }
+
+        SetArmas(a1, a2);
+    }
+
+
+
+    public void StartPlayer()
+    {
+        start = true;
+    }
+
+    private void onDestroy()
+    {
+        Destroy(arma1);
+        Destroy(arma2);
     }
 }

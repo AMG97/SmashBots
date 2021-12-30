@@ -12,14 +12,19 @@ public class DisparoAutomatico : MonoBehaviour
 
     float t=-3;
 
+    public static bool start = false;
+
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime;
-        if(t>=time_max)
+        if (start)
         {
-            t = 0;
-            s.Shoot_Proyectile();
+            t += Time.deltaTime;
+            if (t >= time_max)
+            {
+                t = 0;
+                s.Shoot_Proyectile();
+            }
         }
     }
 }

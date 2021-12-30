@@ -10,6 +10,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
     public InputField createInput;
     public InputField joinInput;
 
+    public Elegir_Armas armas;
+
 
     /// ///////////////////////
     /// CONECTARSE A PHOTON ///
@@ -37,12 +39,30 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
+        if (armas.GetArma(0) != null)
+            OnlineController.arma_1 = armas.GetArma(0).name;
+        else
+            OnlineController.arma_1 = "BBGun(Clone)";
+
+        if (armas.GetArma(1) != null)
+            OnlineController.arma_2 = armas.GetArma(1).name;
+        else
+            OnlineController.arma_2 = "Taser(Clone)";
         PhotonNetwork.CreateRoom(createInput.text);
 
     }
 
     public void JoinRoom()
     {
+        if (armas.GetArma(0) != null)
+            OnlineController.arma_1 = armas.GetArma(0).name;
+        else
+            OnlineController.arma_1 = "BBGun(Clone)";
+
+        if (armas.GetArma(1) != null)
+            OnlineController.arma_2 = armas.GetArma(1).name;
+        else
+            OnlineController.arma_2 = "Taser(Clone)";
         PhotonNetwork.JoinRoom(joinInput.text);
     }
 

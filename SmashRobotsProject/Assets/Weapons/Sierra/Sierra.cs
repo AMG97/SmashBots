@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Sierra : MonoBehaviour
 {
+    public static bool start = false;
+
     [SerializeField]
     float speed, rotate_speed;
 
@@ -21,18 +23,22 @@ public class Sierra : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dir == 0)
-            transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
-        else
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + speed * Time.deltaTime);
 
-        time_rot += Time.deltaTime;
-        if (Mathf.Abs(transform.localPosition.x) > max_mov && time_rot > 2)
+        if (start)
         {
-            speed *= -1;
-            time_rot = 0;
+            if (dir == 0)
+                transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+            else
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + speed * Time.deltaTime);
+
+            time_rot += Time.deltaTime;
+            if (Mathf.Abs(transform.localPosition.x) > max_mov && time_rot > 2)
+            {
+                speed *= -1;
+                time_rot = 0;
+            }
+            transform.Rotate(0, 0, rotate_speed * Time.deltaTime);
         }
-        transform.Rotate(0, 0, rotate_speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

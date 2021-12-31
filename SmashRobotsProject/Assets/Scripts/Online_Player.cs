@@ -54,17 +54,20 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
 
     Transform arma_detras_pos, arma_derecha_pos, arma_izquierda_pos;
 
+    [SerializeField]
+    Fin_Partida_Online f;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
-        start = true;
         vida = vida_max;
         
 
         energia = 0;
 
+        f = GameObject.Find("OnlineController").GetComponent<Fin_Partida_Online>();
 
         view = GetComponent<PhotonView>();
         joystick = GameObject.Find("Joystick").GetComponent<FixedJoystick>();
@@ -147,8 +150,7 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
 
             if (barra_vida.fillAmount <= 0.01 && Time.timeScale > 0)
             {
-                //f.Terminar(0);
-                Debug.Log("FINN");
+                f.Terminar(0);
             }
 
 
@@ -168,6 +170,11 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
         {
             slider_vida.value = Mathf.Lerp(slider_vida.value, (vida / vida_max), velocidad_vida);
             slider_energia.value = Mathf.Lerp(slider_energia.value, (energia / energia_max), velocidad_vida);
+
+            if(slider_vida.value <= 0.01 && Time.timeScale > 0)
+            {
+                f.Terminar(1);
+            }
             
             canvas.transform.LookAt(cam.transform);
             canvas.transform.Rotate(new Vector3(0, 180, 0));
@@ -214,6 +221,11 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
         Transform arma_izquierda_pos = transform.GetChild(6);
 
         GameObject a1=null, a2=null;
+
+        Sprite boton_1_sprite, boton_2_sprite;
+
+        boton_1_sprite = i_boton_1.sprite;
+        boton_2_sprite = i_boton_2.sprite;
 
         switch ((string)a[0])
         {
@@ -270,6 +282,12 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
                 i_boton_2.sprite = i_taser;
                 break;
         }
+        view = GetComponent<PhotonView>();
+        if (!view.IsMine)
+        {
+            i_boton_1.sprite = boton_1_sprite;
+            i_boton_2.sprite = boton_2_sprite;
+        }
 
         SetArmas(a1, a2);
     }
@@ -281,7 +299,7 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
         start = true;
     }
 
-    private void onDestroy()
+    private void OnDestroy()
     {
         Destroy(arma1);
         Destroy(arma2);
@@ -291,7 +309,8 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     {
         if (start && Disparar(arma1.Get_Energy()))
         {
-            arma1.Shoot_Proyectile();
+            //arma1.Shoot_Proyectile();
+            view.RPC("RPC_Shoot", RpcTarget.AllViaServer, 1);
         }
 
     }
@@ -300,8 +319,49 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     {
         if (start && Disparar(arma2.Get_Energy()))
         {
-            arma2.Shoot_Proyectile();
+            //arma2.Shoot_Proyectile();
+            view.RPC("RPC_Shoot", RpcTarget.AllViaServer, 2);
         }
+    }
+
+    [PunRPC]
+    public void RPC_Shoot(int arma)
+    {
+        Shoot_Online s;
+
+        if (arma == 1)
+            s = arma1;
+        else
+            s = arma2;
+
+        GameObject projectile = s.getProyectile();
+        Transform punto_disparo = s.getpuntoDisparo();
+
+
+
+        GameObject g;
+        if (projectile.name == "Electricidad" || projectile.name == "Fuego")
+            g = Instantiate(projectile, punto_disparo.transform);
+        else
+            g = Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);
+        if (projectile.name == "Mina")
+        {
+            g.transform.position = new Vector3(g.transform.position.x, -0.14f, g.transform.position.z);
+            Vector3 new_rot = g.transform.rotation.eulerAngles;
+            new_rot.x = 0;
+            g.transform.eulerAngles = (new_rot);
+        }
+        else
+        {
+            s.PlayAudio();
+        }
+
+        Projectile p = g.GetComponent<Projectile>();
+        if(p!=null)
+        {
+            p.setViewID(view.ViewID);
+        }
+
     }
 
     public bool Disparar(float consumo_energia)
@@ -313,5 +373,20 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
         }
 
         return false;
+    }
+
+    public int getViewID()
+    {
+        return view.ViewID;
+    }
+
+    public bool ViewMine()
+    {
+        return view.IsMine;
+    }
+
+    public float Vida()
+    {
+        return vida;
     }
 }

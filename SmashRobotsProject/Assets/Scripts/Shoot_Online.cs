@@ -57,4 +57,19 @@ public class Shoot_Online : MonoBehaviourPunCallbacks
         else
             return projectile.GetComponent<Mine>().Daño();
     }
+
+    public void PlayAudio()
+    {
+        audio.Play();
+    }
+
+    public GameObject getProyectile()
+    {
+        return projectile;
+    }
+
+    public Transform getpuntoDisparo()
+    {
+        return punto_disparo;
+    }
 }

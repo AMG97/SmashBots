@@ -13,12 +13,19 @@ public class Projectile : MonoBehaviour
 
     float time_colision = 0;
 
+    int viewID = -1;
+
 
     float count = 0;
     // Start is called before the first frame update
     void Start()
     {
         time_alive = 0;
+    }
+
+    public void setViewID(int v)
+    {
+        viewID = v;
     }
 
     // Update is called once per frame
@@ -43,7 +50,7 @@ public class Projectile : MonoBehaviour
             {
                 Online_Player o = other.GetComponent<Online_Player>();
                 if (o != null)
-                    o.Daño(damage / 60);
+                    o.Daño(damage);
                 else
                 {
                     Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
@@ -84,7 +91,6 @@ public class Projectile : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         count++;
-        //Debug.Log(count);
         if(count < 60)
         {
             Bot_Movement bot = other.GetComponent<Bot_Movement>();
@@ -93,12 +99,11 @@ public class Projectile : MonoBehaviour
             else
             {
                 Online_Player o = other.GetComponent<Online_Player>();
-                if (o != null)
-                    o.Daño(damage / 60);
+                if (o != null && o.getViewID() != viewID)
+                    o.Daño(damage / 50);
                 else
                 {
                     Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
-                    Debug.Log(e);
                     if (e != null)
                         e.Daño(damage / 60);
                 }

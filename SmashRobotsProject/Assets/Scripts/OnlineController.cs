@@ -48,6 +48,8 @@ public class OnlineController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             p=PhotonNetwork.Instantiate(playerPrefab.name, pos1, Quaternion.identity,0, armas );
+            contador_text.text = "eSPeRANDO CONTRINCANTe...";
+            contador_text.fontSize = 100;
         }
         else
         {
@@ -67,6 +69,10 @@ public class OnlineController : MonoBehaviourPunCallbacks
 
     IEnumerator CountDown()
     {
+        contador_text.text = "3";
+        contador_text.fontSize = 360;
+
+
         while (contador_number > 0)
         {
             contador_text.text = contador_number.ToString();
@@ -110,6 +116,34 @@ public class OnlineController : MonoBehaviourPunCallbacks
             {
                 sec = 59;
                 min--;
+            }
+        }
+
+        if (Time.timeScale > 0f)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            float vida_mine=0, vida_other=0;
+            Online_Player p1 = players[0].GetComponent<Online_Player>();
+            Online_Player p2 = players[1].GetComponent<Online_Player>();
+            
+            if (p1.ViewMine())
+                vida_mine = p1.Vida();
+            else
+                vida_other = p1.Vida();
+
+            if (p2.ViewMine())
+                vida_mine = p2.Vida();
+            else
+                vida_other = p2.Vida();
+
+
+            if (vida_mine > vida_other)
+            {
+                gameObject.GetComponent<Fin_Partida_Online>().Terminar(1);
+            }
+            else
+            {
+                gameObject.GetComponent<Fin_Partida_Online>().Terminar(0);
             }
         }
     }

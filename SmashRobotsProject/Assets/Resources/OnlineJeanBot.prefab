@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 3717633654709348666}
   m_Layer: 0
   m_Name: OnlineJeanBot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,6 +333,7 @@ MonoBehaviour:
   i_taser: {fileID: 21300000, guid: 261f67459f48fae45bfe5e90e99844df, type: 3}
   i_laser: {fileID: 21300000, guid: cf7c5cf17162a764a9bf7dbe8b69201d, type: 3}
   i_lanzallamas: {fileID: 21300000, guid: 3065be771b6bcf04f88ded58664802e4, type: 3}
+  f: {fileID: 0}
 --- !u!114 &7213974135206123547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3056399116526311562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 7, z: -9.6}
+  m_LocalPosition: {x: 10, y: 7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2560855437796361844}
@@ -991,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514479544357057409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 7, z: -9.6}
+  m_LocalPosition: {x: -10, y: 7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2560855437796361844}

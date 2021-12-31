@@ -176,6 +176,8 @@ public class Game_Controller : MonoBehaviour
 
         m.StartPlayer();
         e_c.StartEnemy(player);
+        Sierra.start = true;
+        DisparoAutomatico.start = true;
 
         StartCoroutine(Timer());
     }

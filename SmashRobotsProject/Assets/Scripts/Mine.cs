@@ -44,7 +44,7 @@ public class Mine : MonoBehaviour
         {
             Online_Player o = other.GetComponent<Online_Player>();
             if (o != null)
-                o.Daño(damage / 60);
+                o.Daño(damage);
             else
             {
 

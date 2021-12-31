@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3170728811448410002}
   - component: {fileID: 1994930375032672311}
   - component: {fileID: 4344739793639662845}
-  - component: {fileID: 1732531213887268461}
   - component: {fileID: 3412379615305364622}
+  - component: {fileID: 4958525386511543473}
   - component: {fileID: 5164138055058244288}
   - component: {fileID: 322863085097681821}
   m_Layer: 0
@@ -88,31 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1732531213887268461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2831464141825951016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99a3bd339871cb43963c5b33886d828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 2404905568869932378, guid: beda36446d16e7148914923c03171751, type: 3}
-  energia: 40
-  punto_disparo: {fileID: 4897470162385870448}
-  nombre: Pistola
-  descripcion: 'Lanza balas a gran velocidad para destrozar a tus oponentes
-
-
-
-    -
-    Distancia larga
-
-
-'
 --- !u!82 &3412379615305364622
 AudioSource:
   m_ObjectHideFlags: 0
@@ -209,6 +184,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4958525386511543473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831464141825951016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d675c8a1594faf478c5af2a305dd152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 2404905568869932378, guid: beda36446d16e7148914923c03171751, type: 3}
+  energia: 40
+  punto_disparo: {fileID: 4897470162385870448}
 --- !u!114 &5164138055058244288
 MonoBehaviour:
   m_ObjectHideFlags: 0

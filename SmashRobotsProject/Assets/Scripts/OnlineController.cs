@@ -29,6 +29,8 @@ public class OnlineController : MonoBehaviourPunCallbacks
     TMPro.TextMeshProUGUI contador_text;
     int contador_number = 3;
 
+    Online_Player pl;
+
     void Start()
     {
         view = GetComponent<PhotonView>();
@@ -41,16 +43,20 @@ public class OnlineController : MonoBehaviourPunCallbacks
         object[] armas = new object[2];
         armas[0] = arma_1;
         armas[1] = arma_2;
+
+        GameObject p;
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate(playerPrefab.name, pos1, Quaternion.identity,0, armas );
+            p=PhotonNetwork.Instantiate(playerPrefab.name, pos1, Quaternion.identity,0, armas );
         }
         else
         {
-            PhotonNetwork.Instantiate(playerPrefab.name, pos2, Quaternion.Euler(0, 180, 0),0, armas);
+            p=PhotonNetwork.Instantiate(playerPrefab.name, pos2, Quaternion.Euler(0, 180, 0),0, armas);
             view.RPC("RPC_Start", RpcTarget.AllViaServer);
 
         }
+
+        pl = p.GetComponent<Online_Player>();
     }
 
     [PunRPC]
@@ -106,5 +112,16 @@ public class OnlineController : MonoBehaviourPunCallbacks
                 min--;
             }
         }
+    }
+
+    public void Shoot1()
+    {
+        pl.DispararArma1();
+
+    }
+
+    public void Shoot2()
+    {
+        pl.DispararArma2();
     }
 }

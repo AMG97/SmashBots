@@ -22,7 +22,7 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     [SerializeField]
     Slider slider_vida, slider_energia;
 
-    Shoot arma1=null, arma2=null;
+    Shoot_Online arma1=null, arma2=null;
 
     Camera_Follow cam;
 
@@ -58,6 +58,8 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     // Start is called before the first frame update
     void Start()
     {
+
+        start = true;
         vida = vida_max;
         
 
@@ -195,8 +197,8 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
 
     public void SetArmas(GameObject a, GameObject b)
     {
-        arma1 = a.GetComponent<Shoot>();
-        arma2 = a.GetComponent<Shoot>();
+        arma1 = a.GetComponent<Shoot_Online>();
+        arma2 = b.GetComponent<Shoot_Online>();
     }
 
 
@@ -283,5 +285,33 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     {
         Destroy(arma1);
         Destroy(arma2);
+    }
+
+    public void DispararArma1()
+    {
+        if (start && Disparar(arma1.Get_Energy()))
+        {
+            arma1.Shoot_Proyectile();
+        }
+
+    }
+
+    public void DispararArma2()
+    {
+        if (start && Disparar(arma2.Get_Energy()))
+        {
+            arma2.Shoot_Proyectile();
+        }
+    }
+
+    public bool Disparar(float consumo_energia)
+    {
+        if (consumo_energia <= energia)
+        {
+            energia -= consumo_energia;
+            return true;
+        }
+
+        return false;
     }
 }

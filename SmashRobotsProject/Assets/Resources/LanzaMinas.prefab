@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3766119159315359844}
   - component: {fileID: 1416107351380335790}
   - component: {fileID: 3737518660811251240}
-  - component: {fileID: 1033629350537165899}
   - component: {fileID: -3271445829971567600}
   - component: {fileID: -4159827847961657538}
+  - component: {fileID: 8884409832242479272}
   m_Layer: 0
   m_Name: LanzaMinas
   m_TagString: Untagged
@@ -101,31 +101,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.26318538, y: 0.042350367, z: 0.26318538}
   m_Center: {x: 0, y: 0.025693722, z: -0.000000022351742}
---- !u!114 &1033629350537165899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623742304254410107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99a3bd339871cb43963c5b33886d828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 2421786950828732948, guid: 356f11ed0b1a26c4fa4152e8be6c38d5, type: 3}
-  energia: 60
-  punto_disparo: {fileID: 4581864334853405880}
-  nombre: Lanza Minas
-  descripcion: 'Suelta minas explosivas que explotaran cuando alguien pase por encima
-    de ellas
-
-
-
-    - Remoto
-
-
-'
 --- !u!114 &-3271445829971567600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +140,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &8884409832242479272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623742304254410107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d675c8a1594faf478c5af2a305dd152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 2421786950828732948, guid: 356f11ed0b1a26c4fa4152e8be6c38d5, type: 3}
+  energia: 60
+  punto_disparo: {fileID: 4581864334853405880}
 --- !u!1 &1215052800260898019
 GameObject:
   m_ObjectHideFlags: 0

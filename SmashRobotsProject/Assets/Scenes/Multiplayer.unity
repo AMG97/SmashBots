@@ -6057,14 +6057,14 @@ PrefabInstance:
     - target: {fileID: 7703987703179889812, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1923063676}
+      objectReference: {fileID: 1966045568}
     - target: {fileID: 7703987703179889812, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Shoot1
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703179889812, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Game_Controller, Assembly-CSharp
+      value: OnlineController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703179889814, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_Type
@@ -6153,14 +6153,14 @@ PrefabInstance:
     - target: {fileID: 7703987703745318955, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1923063676}
+      objectReference: {fileID: 1966045568}
     - target: {fileID: 7703987703745318955, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Shoot2
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703745318955, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Game_Controller, Assembly-CSharp
+      value: OnlineController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7703987703745318957, guid: e7d0853869a8a1b4d9d90cb9066fa2a9, type: 3}
       propertyPath: m_Type

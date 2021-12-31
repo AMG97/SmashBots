@@ -41,10 +41,10 @@ GameObject:
   - component: {fileID: 8782673772445670350}
   - component: {fileID: 5642316361788855403}
   - component: {fileID: 7613756969628491937}
-  - component: {fileID: 1274824060548255514}
   - component: {fileID: 8123161043386351253}
   - component: {fileID: -6458516735319293836}
   - component: {fileID: -6146603720353047971}
+  - component: {fileID: 4041012048201794908}
   m_Layer: 0
   m_Name: Lanzallamas
   m_TagString: Untagged
@@ -117,31 +117,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1274824060548255514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8262280057841762676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99a3bd339871cb43963c5b33886d828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 8720622036553471693, guid: 33451dfe6dced864e8cd56bb92167235, type: 3}
-  energia: 70
-  punto_disparo: {fileID: 6877690869890533224}
-  nombre: Lanzallamas
-  descripcion: 'Si te encanta dar la brasa puedes centrarte en quemar a tu enemigo
-    en el Fuego
-
-
-
-    - Distancia corta
-
-
-'
 --- !u!82 &8123161043386351253
 AudioSource:
   m_ObjectHideFlags: 0
@@ -255,7 +230,7 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
+  observableSearch: 0
   ObservedComponents:
   - {fileID: -6146603720353047971}
   sceneViewId: 0
@@ -277,3 +252,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &4041012048201794908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262280057841762676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d675c8a1594faf478c5af2a305dd152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 8720622036553471693, guid: 33451dfe6dced864e8cd56bb92167235, type: 3}
+  energia: 70
+  punto_disparo: {fileID: 6877690869890533224}

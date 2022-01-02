@@ -118,10 +118,10 @@ public class Elegir_Armas : MonoBehaviour
             cb.selectedColor = activado;
 
             Shoot s = armas[0].GetComponent<Shoot>();
-
+            
             nombre_arma.text = s.Get_Nombre();
             descripcion_arma.text = s.Get_Descripcion();
-            descripcion_arma.text += "- Potencia: "+s.Get_Daño()+"pt \n \n- energia: "+s.Get_Energy()+"pt";
+            descripcion_arma.text += "- Potencia: "+s.Get_DaÃ±o()+"pt \n- energia: "+s.Get_Energy()+"pt";
             ms.PlaySound_Advance();
         }
         else if (armas[1] == null)
@@ -144,7 +144,7 @@ public class Elegir_Armas : MonoBehaviour
 
             nombre_arma.text = s.Get_Nombre();
             descripcion_arma.text = s.Get_Descripcion();
-            descripcion_arma.text += "- Potencia: " + s.Get_Daño() + "pt \n \n- energia: " + s.Get_Energy() + "pt";
+            descripcion_arma.text += "- Potencia: " + s.Get_DaÃ±o() + "pt \n- energia: " + s.Get_Energy() + "pt";
             ms.PlaySound_Advance();
         }
         b.colors = cb;

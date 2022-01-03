@@ -1890,7 +1890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1687953362109867835, guid: 5ba24f305a6e4154ab961faed86203cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.142
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1687953362109867835, guid: 5ba24f305a6e4154ab961faed86203cd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6548,7 +6548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JeanBot: {fileID: 1607819434897624256, guid: 28ed796671dd35c4c9fac9eaff3e862d, type: 3}
-  Enemy: {fileID: 835369631275543221, guid: db049155509ec514588785b14905a1d3, type: 3}
+  Enemy: {fileID: 5904921950537495032, guid: fe2d88f2efd9cbe42b92c184c00227a9, type: 3}
   cam: {fileID: 963194229}
   v: {fileID: 1971380248}
   e: {fileID: 1971380247}

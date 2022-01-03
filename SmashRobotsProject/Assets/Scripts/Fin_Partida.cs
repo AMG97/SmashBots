@@ -40,9 +40,8 @@ public class Fin_Partida : MonoBehaviour
 
     public void Repetir()
     {
-        //menu_pausa.SetActive(false);
-        //Time.timeScale = 1f;
-        SceneManager.LoadScene("Game2", LoadSceneMode.Single);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
     public void Salir()
     {

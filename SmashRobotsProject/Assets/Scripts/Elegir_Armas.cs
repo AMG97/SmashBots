@@ -121,7 +121,7 @@ public class Elegir_Armas : MonoBehaviour
 
             nombre_arma.text = s.Get_Nombre();
             descripcion_arma.text = s.Get_Descripcion();
-            descripcion_arma.text += "- Potencia: "+s.Get_Daño()+"pt \n \n- energia: "+s.Get_Energy()+"pt";*/
+            descripcion_arma.text += "- Potencia: "+s.Get_Daï¿½o()+"pt \n \n- energia: "+s.Get_Energy()+"pt";*/
             ms.PlaySound_Advance();
         }
         else if (armas[1] == null)
@@ -144,7 +144,7 @@ public class Elegir_Armas : MonoBehaviour
 
             nombre_arma.text = s.Get_Nombre();
             descripcion_arma.text = s.Get_Descripcion();
-            descripcion_arma.text += "- Potencia: " + s.Get_Daño() + "pt \n \n- energia: " + s.Get_Energy() + "pt";*/
+            descripcion_arma.text += "- Potencia: " + s.Get_Daï¿½o() + "pt \n \n- energia: " + s.Get_Energy() + "pt";*/
             ms.PlaySound_Advance();
         }
         b.colors = cb;
@@ -152,7 +152,7 @@ public class Elegir_Armas : MonoBehaviour
         Shoot s = a.GetComponent<Shoot>();
         nombre_arma.text = s.Get_Nombre();
         descripcion_arma.text = s.Get_Descripcion();
-        descripcion_arma.text += "- Potencia: " + s.Get_Daño() + "pt \n \n- energia: " + s.Get_Energy() + "pt";
+        descripcion_arma.text += "- Potencia: " + s.Get_DaÃ±o() + "pt \n \n- energia: " + s.Get_Energy() + "pt";
     }
 
     public GameObject GetArma(int i)

@@ -42,7 +42,7 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     Image barra_energia;
 
     [SerializeField]
-    GameObject mina, pistola, taser, laser, lanzallamas;
+    GameObject mina, pistola, taser, laser, lanzallamas, pinchos;
 
     GameObject a1, a2;
 
@@ -50,7 +50,7 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
     Image i_boton_1, i_boton_2;
 
     [SerializeField]
-    Sprite i_mina, i_pistola, i_taser, i_laser, i_lanzallamas;
+    Sprite i_mina, i_pistola, i_taser, i_laser, i_lanzallamas, i_pinchos;
 
     Transform arma_detras_pos, arma_derecha_pos, arma_izquierda_pos;
 
@@ -253,6 +253,11 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
                 a1 = Instantiate(taser, arma_derecha_pos);
                 i_boton_1.sprite = i_taser;
                 break;
+
+            case "Pinchos(Clone)":
+                a1 = Instantiate(pinchos, arma_derecha_pos);
+                i_boton_1.sprite = i_pinchos;
+                break;
         }
 
         switch ((string)a[1])
@@ -280,6 +285,11 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
             case "Taser(Clone)":
                 a2 = Instantiate(taser, arma_izquierda_pos);
                 i_boton_2.sprite = i_taser;
+                break;
+
+            case "Pinchos(Clone)":
+                a2 = Instantiate(pinchos, arma_izquierda_pos);
+                i_boton_2.sprite = i_pinchos;
                 break;
         }
         view = GetComponent<PhotonView>();
@@ -340,7 +350,7 @@ public class Online_Player : MonoBehaviourPunCallbacks, IPunObservable, IPunInst
 
 
         GameObject g;
-        if (projectile.name == "Electricidad" || projectile.name == "Fuego")
+        if (projectile.name == "Electricidad" || projectile.name == "Fuego" || projectile.name == "PinchosShoot")
             g = Instantiate(projectile, punto_disparo.transform);
         else
             g = Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);

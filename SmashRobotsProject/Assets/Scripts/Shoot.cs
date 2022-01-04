@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour
     public void Shoot_Proyectile(float scale = 1)
     {
         GameObject g;
-        if(projectile.name == "Electricidad" || projectile.name == "Fuego")
+        if(projectile.name == "Electricidad" || projectile.name == "Fuego" || projectile.name == "PinchosShoot")
             g=Instantiate(projectile, punto_disparo.transform);
         else 
             g=Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);

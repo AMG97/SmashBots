@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Projectile : MonoBehaviour
 {
@@ -16,11 +17,28 @@ public class Projectile : MonoBehaviour
     int viewID = -1;
 
 
+    public float rotacion=-10;
+    public float velocidad=2;
+    public float max_rotacion = 90;
+    private float rotacion_actual = 0;
+    bool rotando = false;
+
+    Quaternion rotacion_inicial;
+
+
     float count = 0;
     // Start is called before the first frame update
     void Start()
     {
         time_alive = 0;
+        if (gameObject.name == "PinchosShoot(Clone)")
+        {
+            rotacion_inicial = transform.parent.parent.rotation;
+
+            if(SceneManager.GetActiveScene().name != "Multiplayer")
+                damage /= 2;
+        }
+
     }
 
     public void setViewID(int v)
@@ -32,14 +50,34 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         time_alive += Time.deltaTime;
-        if (time_alive >= max_time_alive)
-            Destroy(gameObject);
-        gameObject.transform.position -= gameObject.transform.forward*Time.deltaTime*speed;
+        if (gameObject.name != "PinchosShoot(Clone)")
+        {
+            if (time_alive >= max_time_alive)
+                Destroy(gameObject);
+            gameObject.transform.position -= gameObject.transform.forward * Time.deltaTime * speed;
+        }
+        else
+        {
+            transform.parent.parent.Rotate(rotacion * Time.deltaTime* velocidad,0,0);
+            rotacion_actual += rotacion * Time.deltaTime * velocidad;
+
+            if(Mathf.Abs(rotacion_actual)>=Mathf.Abs(max_rotacion) && rotando != true)
+            {
+                rotando = true;
+                rotacion *= -1;
+            }
+            if(Mathf.Abs(rotacion_actual)< 5 && rotando == true)
+            {
+                transform.parent.parent.rotation = rotacion_inicial;
+                Destroy(gameObject);
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (speed != 0 && time_alive > Time.deltaTime)
+        if ((speed != 0 || gameObject.name == "PinchosShoot(Clone)") && time_alive > Time.deltaTime)
         {
             //if (time_alive > Time.deltaTime)
             //{
@@ -63,25 +101,6 @@ public class Projectile : MonoBehaviour
             //}
         }
     }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        time_colision += Time.deltaTime;
-        if(time_colision >= max_time_alive/10)
-        {
-            time_colision = 0;
-
-            Bot_Movement bot = other.GetComponent<Bot_Movement>();
-            if (bot != null)
-                bot.Daño(damage/10);
-            else
-            {
-                Enemy_Controller e = other.GetComponentInParent<Enemy_Controller>();
-                if (e != null)
-                    e.Daño(damage/10);
-            }
-        }
-    }*/
 
     public float Daño()
     {

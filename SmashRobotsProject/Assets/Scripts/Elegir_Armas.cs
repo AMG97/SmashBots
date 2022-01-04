@@ -17,10 +17,10 @@ public class Elegir_Armas : MonoBehaviour
     Color activado, desactivado;
 
     [SerializeField]
-    Button b_mina, b_taser, b_laser, b_pistola, b_lanzallamas;
+    Button b_mina, b_taser, b_laser, b_pistola, b_lanzallamas, b_pincho;
 
     [SerializeField]
-    GameObject o_mina, o_taser, o_laser, o_pistola, o_lanzallamas;
+    GameObject o_mina, o_taser, o_laser, o_pistola, o_lanzallamas, o_pincho;
 
     [SerializeField]
     Text nombre_arma, descripcion_arma;
@@ -35,6 +35,7 @@ public class Elegir_Armas : MonoBehaviour
         b_laser.onClick.AddListener(delegate { Arma(o_laser, b_laser); });
         b_pistola.onClick.AddListener(delegate { Arma(o_pistola, b_pistola); });
         b_lanzallamas.onClick.AddListener(delegate { Arma(o_lanzallamas, b_lanzallamas); });
+        b_pincho.onClick.AddListener(delegate { Arma(o_pincho, b_pincho); });
 
         switch (Game_Controller.arma_1)
         {
@@ -51,6 +52,9 @@ public class Elegir_Armas : MonoBehaviour
                 Arma(o_taser, b_taser);
                 break;
             case "LanzaMinas(Clone)":
+                Arma(o_mina, b_mina);
+                break;
+            case "Pinchos(Clone)":
                 Arma(o_mina, b_mina);
                 break;
         }
@@ -70,6 +74,9 @@ public class Elegir_Armas : MonoBehaviour
                 Arma(o_taser, b_taser);
                 break;
             case "LanzaMinas(Clone)":
+                Arma(o_mina, b_mina);
+                break;
+            case "Pinchos(Clone)":
                 Arma(o_mina, b_mina);
                 break;
         }

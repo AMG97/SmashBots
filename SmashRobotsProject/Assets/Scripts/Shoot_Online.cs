@@ -23,10 +23,13 @@ public class Shoot_Online : MonoBehaviourPunCallbacks
     public void Shoot_Proyectile(float scale = 1)
     {
         GameObject g;
-        if(projectile.name == "Electricidad" || projectile.name == "Fuego")
-            g=Instantiate(projectile, punto_disparo.transform);
-        else 
-            g=Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);
+        Debug.Log(projectile.name);
+        if (projectile.name == "Electricidad" || projectile.name == "Fuego" || projectile.name == "PinchosShoot")
+        {
+            g = Instantiate(projectile, punto_disparo.transform);
+        }
+        else
+            g = Instantiate(projectile, punto_disparo.position, gameObject.transform.rotation);
         if (projectile.name == "Mina")
         {
             g.transform.position = new Vector3(g.transform.position.x, -0.14f, g.transform.position.z);

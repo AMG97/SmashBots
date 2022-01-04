@@ -47,13 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cec74efe47e62447a05f0f288223085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_vida: 80
+  max_vida: 100
   slider: {fileID: 6034535812021148485}
   canvas: {fileID: 415415697240673048}
   velocidad_vida: 2
-  speed_r: 1.8
-  speed_m: 1.3
-  distancia_min: 1.5
+  speed_r: 1.9
+  speed_m: 1.4
+  distancia_min: 1.4
   rb: {fileID: -5956723289804180329}
   arma_1: {fileID: 1440874315103656276}
   arma_2: {fileID: 6622741777181377470}
@@ -61,7 +61,7 @@ MonoBehaviour:
   estado: 0
   runAwayPoint: {x: 0, y: 0, z: 0}
   distancia_huir: 5
-  t_check_atack: 0.4
+  t_check_atack: 0.3
   rotation_wheel: 160
   FrontLeftWheel: {fileID: 143104953934472733}
   FrontRightWheel: {fileID: 143104954773594473}
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8998806038546438826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.047, z: 0}
+  m_LocalPosition: {x: 0, y: 0.047, z: 0.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6661010044032019562}
@@ -135,7 +135,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8998806038546438826}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.38595662, z: 0.46964854}

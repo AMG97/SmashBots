@@ -2601,7 +2601,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae0962917af5cd441a70714202a07677, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.262
+  m_Volume: 0.357
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2610,7 +2610,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.3
-  MaxDistance: 1.5
+  MaxDistance: 3.23
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -5866,7 +5866,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae0962917af5cd441a70714202a07677, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.262
+  m_Volume: 0.357
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5875,7 +5875,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.3
-  MaxDistance: 1.5
+  MaxDistance: 3.23
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -7806,7 +7806,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae0962917af5cd441a70714202a07677, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.262
+  m_Volume: 0.357
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7815,7 +7815,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.3
-  MaxDistance: 1.5
+  MaxDistance: 3.23
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -8610,6 +8610,7 @@ MonoBehaviour:
   taser: {fileID: 6389116474070628650, guid: 071fe2ac76c7cf54b8646b2f67e81e19, type: 3}
   laser: {fileID: 2435743360143748878, guid: 4fdc00d992a7fb34eb43d227a1928f6b, type: 3}
   lanzallamas: {fileID: 1965414561030119510, guid: 174167dbe9a042a4da0688a3ec4ef2fb, type: 3}
+  pinchos: {fileID: 6069663816429795093, guid: 6284e4c955296014b86c75b595d3d5e0, type: 3}
   i_boton_1: {fileID: 342114656}
   i_boton_2: {fileID: 270415135}
   i_mina: {fileID: 21300000, guid: 93240629b4b6a9b41889575ff95a2b06, type: 3}
@@ -8617,6 +8618,7 @@ MonoBehaviour:
   i_taser: {fileID: 21300000, guid: 261f67459f48fae45bfe5e90e99844df, type: 3}
   i_laser: {fileID: 21300000, guid: cf7c5cf17162a764a9bf7dbe8b69201d, type: 3}
   i_lanzallamas: {fileID: 21300000, guid: 3065be771b6bcf04f88ded58664802e4, type: 3}
+  i_pinchos: {fileID: 21300000, guid: c50b28bd074d8f948ae19f2f9acef04d, type: 3}
   contador_text: {fileID: 1971380249}
   au_cont: {fileID: 2024415845}
   cont: {fileID: 8300000, guid: ad75423ec3b7b1248ad0f4e74747f00b, type: 3}
@@ -9881,7 +9883,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae0962917af5cd441a70714202a07677, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.262
+  m_Volume: 0.357
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9890,7 +9892,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.3
-  MaxDistance: 1.5
+  MaxDistance: 3.23
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0

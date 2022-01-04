@@ -30,13 +30,13 @@ public class Game_Controller : MonoBehaviour
     Energia e;
 
     [SerializeField]
-    GameObject mina, pistola, taser, laser, lanzallamas;
+    GameObject mina, pistola, taser, laser, lanzallamas, pinchos;
 
     [SerializeField]
     Image i_boton_1, i_boton_2;
 
     [SerializeField]
-    Sprite i_mina, i_pistola, i_taser, i_laser, i_lanzallamas;
+    Sprite i_mina, i_pistola, i_taser, i_laser, i_lanzallamas, i_pinchos;
 
     [SerializeField]
     TMPro.TextMeshProUGUI contador_text;
@@ -96,6 +96,12 @@ public class Game_Controller : MonoBehaviour
                 a1 = Instantiate(taser, arma_derecha_pos);
                 i_boton_1.sprite = i_taser;
                 break;
+
+            case "Pinchos(Clone)":
+                a1 = Instantiate(pinchos, arma_derecha_pos);
+                i_boton_1.sprite = i_pinchos;
+                break;
+
         }
 
         switch (arma_2)
@@ -123,6 +129,11 @@ public class Game_Controller : MonoBehaviour
             case "Taser(Clone)":
                 a2 = Instantiate(taser, arma_izquierda_pos);
                 i_boton_2.sprite = i_taser;
+                break;
+
+            case "Pinchos(Clone)":
+                a2 = Instantiate(pinchos, arma_izquierda_pos);
+                i_boton_2.sprite = i_pinchos;
                 break;
         }
 

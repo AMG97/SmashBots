@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 7270656298997460877, guid: 94e5c139de126b44aa8eddd7b503abd6, type: 3}
   explosion_force: 230000
-  damage: 25
+  damage: 20
   distance_back: 0
 --- !u!82 &7033436018916955541
 AudioSource:

@@ -265,5 +265,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 8720622036553471693, guid: 33451dfe6dced864e8cd56bb92167235, type: 3}
-  energia: 70
+  energia: 75
   punto_disparo: {fileID: 6877690869890533224}

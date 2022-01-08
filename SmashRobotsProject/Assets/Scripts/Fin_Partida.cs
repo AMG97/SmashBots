@@ -49,4 +49,9 @@ public class Fin_Partida : MonoBehaviour
         //Time.timeScale = 1f;
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
+
+    public void Seguir()
+    {
+        SceneManager.LoadScene("Game2", LoadSceneMode.Single);
+    }
 }

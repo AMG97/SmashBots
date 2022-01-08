@@ -4830,8 +4830,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_time_alive: 1
-  damage: 15
+  damage: 10
   speed: 0
+  rotacion: 10
+  velocidad: 1
+  max_rotacion: 90
 --- !u!114 &-505528261021499807
 MonoBehaviour:
   m_ObjectHideFlags: 0

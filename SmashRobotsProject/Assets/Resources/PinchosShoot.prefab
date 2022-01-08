@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_time_alive: 3
-  damage: 25
+  damage: 20
   speed: 0
   rotacion: -20
   velocidad: 15
@@ -83,7 +83,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 7314391093160251756}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

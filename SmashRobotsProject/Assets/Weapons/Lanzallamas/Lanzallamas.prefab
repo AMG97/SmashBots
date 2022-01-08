@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4796953166545719017, guid: 9f0dc665b2431b44a82bdc7cb3f0e883, type: 3}
-  energia: 70
+  energia: 75
   punto_disparo: {fileID: 3935436505830565450}
   nombre: Lanzallamas
   descripcion: 'Si te encanta dar la brasa puedes centrarte en quemar a tu enemigo

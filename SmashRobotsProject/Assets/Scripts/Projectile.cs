@@ -34,9 +34,6 @@ public class Projectile : MonoBehaviour
         if (gameObject.name == "PinchosShoot(Clone)")
         {
             rotacion_inicial = transform.parent.parent.rotation;
-
-            if(SceneManager.GetActiveScene().name != "Multiplayer")
-                damage /= 2;
         }
 
     }
